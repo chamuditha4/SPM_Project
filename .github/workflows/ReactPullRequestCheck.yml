@@ -4,7 +4,7 @@ on:
 jobs:
   start:
     runs-on: windows-latest
-    name: React Build Checker [ Push checker ]
+    name: React Build Checker [ Pull Request Checker ]
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
