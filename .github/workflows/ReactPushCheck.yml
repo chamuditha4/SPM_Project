@@ -12,5 +12,5 @@ jobs:
           node-version: '14'
           architecture: 'x64'
       - run: cd frontend
-      - run: npm ci
+      - run: npm install
       - run: npm build
