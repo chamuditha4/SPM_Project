@@ -1,0 +1,16 @@
+on:
+  pull_request
+
+jobs:
+  start:
+    runs-on: windows-latest
+    name: React Build Checker [ Pull Request Checker ]
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+          architecture: 'x64'
+      - run: cd frontend
+      - run: npm install
+      - run: npm build
