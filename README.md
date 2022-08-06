@@ -6,14 +6,14 @@
 
 Frontend:
 
-```sh
+```nodejs
 cd frontend
 npm install
 ```
 
 Backend:
 
-```sh
+```nodejs
 cd frontend
 npm install
 ```
