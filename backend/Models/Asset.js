@@ -15,7 +15,7 @@ let AssetSchema = new Schema({
     type: String
   },
   value: {
-    type: String
+    type: Number
   }
 }, {
     collection: 'asset'

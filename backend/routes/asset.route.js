@@ -4,7 +4,7 @@ let mongoose = require('mongoose'),
 
 // Asset Model
 let AssetSchema = require('../models/Asset');
-
+let AssetTypeSchema = require('../models/AssetType');
 
 // READ Asset
 router.route('/').get((req, res) => {
@@ -17,8 +17,19 @@ router.route('/').get((req, res) => {
   })
 })
 
+// READ Asset Type
+router.route('/gettypes').get((req, res) => {
+  AssetTypeSchema.find((error, data) => {
+    if (error) {
+      return next(error)
+    } else {
+      res.json(data)
+    }
+  })
+})
+
 // CREATE Asset
-router.route('/create-rate').post((req, res, next) => {
+router.route('/create-asset').post((req, res, next) => {
   AssetSchema.create(req.body, (error, data) => {
   if (error) {
     return next(error)
@@ -27,6 +38,18 @@ router.route('/create-rate').post((req, res, next) => {
     res.json(data)
   }
 })
+});
+
+// CREATE Asset Type
+router.route('/create-asset-type').post((req, res, next) => {
+  AssetTypeSchema.create(req.body, (error, data) => {
+    if (error) {
+      return next(error)
+    } else {
+      console.log(data)
+      res.json(data)
+    }
+  })
 });
 
 // Update Asset
