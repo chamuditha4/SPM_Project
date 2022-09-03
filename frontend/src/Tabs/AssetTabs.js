@@ -22,7 +22,7 @@ function TabPanel(props) {
       {...other}
     >
       {value === index && (
-        <Box p={3}>
+        <Box p={7}>
           <Typography>{children}</Typography>
         </Box>
       )}
@@ -48,7 +48,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     backgroundColor:  'background.paper',
     display: 'flex',
-    height: 224,
+    height: 450,
   },
   tabs: {
     borderRight: `1px solid ${'divider'}`,
@@ -64,7 +64,8 @@ export default function AnnouncementTabs() {
   };
 
   return (
-    <div className={classes.root}>
+      <div className={classes.root}>
+
       <Tabs
         orientation="vertical"
         variant="scrollable"
@@ -73,6 +74,7 @@ export default function AnnouncementTabs() {
         aria-label="Vertical tabs example"
         className={classes.tabs}
       >
+
         <Tab label="Add Asset" {...a11yProps(0)} />
       <Tab label="Edit Asset" {...a11yProps(1)} />
       <Tab label="Remove Asset" {...a11yProps(2)} />
