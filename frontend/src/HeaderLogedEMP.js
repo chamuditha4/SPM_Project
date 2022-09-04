@@ -85,11 +85,11 @@ export default function EmpDashBoard() {
                         text-align="center"
                         aria-label="scrollable auto tabs example"
                     >
-                        <Tab label="Progress" {...a11yProps(0)} />
+                        <Tab label="WORK" {...a11yProps(0)} />
                         <Tab label="Jobs" {...a11yProps(1)} />
                         <Tab label="Salary" {...a11yProps(2)} />
                         <Tab label="Leave" {...a11yProps(3)} />
-                        <Tab label="Asset" {...a11yProps(4)} />
+                        <Tab label="Assets" {...a11yProps(4)} />
                         <Tab label="Attendance" {...a11yProps(5)} />
                         <Tab label="Logout" {...a11yProps(6)} />
 
