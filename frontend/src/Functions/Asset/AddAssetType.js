@@ -91,7 +91,7 @@ function AddAssetType() {
                         label="Description"
                         defaultValue=""
                         multiline Rows={4}
-                        style = {{width: 350}}
+                        style = {{width: "65%", lineHeight: 2}}
                         value={Description}
                         onChange={e => setDescription((e.target.value))}
                     />

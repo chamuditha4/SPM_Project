@@ -48,15 +48,25 @@ function RemoveAsset() {
 
     function onSubmit(event) {
         event.preventDefault();
-        try{
-            axios.delete(`http://localhost:4000/asset/delete-asset/${Selection}`)
-                .then(res => console.log(res.data));
-            handleClick();
-            window.location.reload();
+
+        if(window.confirm("Are you sure want to delete?")==true){
+
+            try{
+                axios.delete(`http://localhost:4000/asset/delete-asset/${Selection}`)
+                    .then(res => console.log(res.data));
+                handleClick();
+                window.location.reload();
+            }
+            catch(err){
+                handleClick2();
+            }
+
+
+        }else{
+
         }
-        catch(err){
-            handleClick2();
-        }
+
+        
 
     }
 
