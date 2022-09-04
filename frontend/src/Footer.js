@@ -10,12 +10,12 @@ function Footer() {
     <div className="footerdiv">
      <footer>
 
-        <p className= "copy" >© 2021 BetterJobs®</p>
-        <p className= "copy" >Created by BetterJobs Developer Team</p>
+        <p className= "copy" >© 2022 EmployeeManager®</p>
+        <p className= "copy" >Created by DreamTeam Developers</p>
 
         <div className= "social">
         <a href="call:0778174156"><img className="contactuslogo" src ={contact} width="20" height="20" alt="Contact Us"/></a>
-        <a href="mailto:betterjobs@outlook.com"><img className="contactuslogo" src ={mail} width="20" height="20" alt="Mail"/></a>
+        <a href="mailto:employeemanager@outlook.com"><img className="contactuslogo" src ={mail} width="20" height="20" alt="Mail"/></a>
         <a href="https://www.linkedin.com"><img className="contactuslogo" src ={linkdin} width="20" height="20" alt="Linkdin"/></a>
         <a href="https://www.youtube.com" ><img className="contactuslogo" src ={youtube} width="20" height="20" alt="Youtube"/></a>
         </div> 

@@ -145,6 +145,7 @@ function EditAsset() {
                             labelId="demo-simple-select-label"
                             id="demo-simple-select"
                             label="Select Job"
+                            
                             onChange={event => handleSelection(event)}
                         >
                             <MenuItem value="Def" disabled selected="true">Select Type</MenuItem>
@@ -163,7 +164,7 @@ function EditAsset() {
                         label="Description"
                         defaultValue=""
                         multiline Rows={4}
-                        style = {{width: 350}}
+                        style = {{width: "65%", lineHeight: 2}}
                         value={Description}
                         onChange={e => setDescription((e.target.value))}
                     />
