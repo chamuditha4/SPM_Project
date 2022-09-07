@@ -16,6 +16,8 @@ import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 import Stack from '@mui/material/Stack';
 
+
+
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
@@ -63,6 +65,7 @@ function EditAnnouncement() {
     
 
   }
+
 
   const handleClick = () => {
     setOpen(true);
@@ -119,6 +122,10 @@ function EditAnnouncement() {
       handleClick2();
     }else{
       try{
+
+        if(window.confirm("Are you sure want to update?")==true){
+
+
         console.log(Title);
         const task = { name: Title,description: Description,department:Department };
         axios.put('http://localhost:4000/Announcement/update-announcement/'+Id, task)
@@ -129,11 +136,14 @@ function EditAnnouncement() {
           setTitle('');
           setDepartment('')
           handleClick();
-      }
-      catch(err){
-        handleClick1();
-        console.log(err);
-      }
+        }else{
+
+        }
+        }
+        catch(err){
+            handleClick1();
+            console.log(err);
+        }
       
     }
 

@@ -7,6 +7,7 @@ import Autocomplete from '@mui/material/Autocomplete';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 import Stack from '@mui/material/Stack';
+import '../Salary/salary.css';
 
 var Eids = [{"name":"No Person","_id":"404"}];
 const Alert = React.forwardRef(function Alert(props, ref) {
@@ -127,7 +128,8 @@ function SetSalary() {
     return (
       <div>
         {autoselect()}
-        <div className="prof">
+        <div className="prof3">
+        <div className="prof4">
           <h2>Set Salary</h2>
           <form onSubmit={onSubmit}>
           <Autocomplete
@@ -191,6 +193,7 @@ function SetSalary() {
           </Snackbar>
         </Stack>
 
+      </div>
       </div>
     )
   }
