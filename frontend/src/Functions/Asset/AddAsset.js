@@ -127,6 +127,9 @@ function AddAsset() {
                         onChange={e => setDescription((e.target.value))}
                     />
                     <br></br><br></br>
+
+                    <TextField id="standard-uncontrolled" label="Value" defaultValue="" value={Value} onChange={e => setValue(e.target.value)} /><br></br><br></br>
+
                     <FormControl sx={{ minWidth: 200 }}>
                         <InputLabel id="demo-simple-select-label">Asset Type</InputLabel>
                         <Select
@@ -135,6 +138,8 @@ function AddAsset() {
                             value={Type}
                             label="Select Job"
                             onChange={e => setType(e.target.value)}
+
+                            required
                         >
                             <MenuItem value="Def" disabled selected="true">Select Type</MenuItem>
                             { repo.map((repos) => (
@@ -159,7 +164,7 @@ function AddAsset() {
                         </Select>
                     </FormControl>
                     <br></br><br></br>
-                    <TextField id="standard-uncontrolled" label="Value" defaultValue="" value={Value} onChange={e => setValue(e.target.value)} /><br></br><br></br>
+                    
                    <Button variant="contained" color="primary"  type="submit">
                         Add Asset
                     </Button></form><br></br><br></br>
