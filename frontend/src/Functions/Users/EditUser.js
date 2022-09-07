@@ -136,7 +136,7 @@ function EditUser() {
         });
 
       }
-      if(Password.length<7){
+      if(Password.length<8){
         alert("Password should be at least 8 characters!")
         return
       }
