@@ -147,8 +147,8 @@ function AddSalaryDetails() {
           Select User
           </Button></form><br></br>
           <form onSubmit={onPut}>
-          <TextField id="standard-uncontrolled" label="Salary" defaultValue="" value={Salary} onChange={e => setSalary(e.target.value)}/><br></br><br></br>
-          <TextField id="standard-uncontrolled" label="Bonus" defaultValue="" value={Bonus} onChange={e => setBonus(e.target.value)}/><br></br><br></br>
+          <TextField id="standard-uncontrolled" label="Salary" defaultValue="" value={Salary} onChange={e => setSalary(e.target.value)} required/><br></br><br></br>
+          <TextField id="standard-uncontrolled" label="Bonus" defaultValue="" value={Bonus} onChange={e => setBonus(e.target.value)} requird/><br></br><br></br>
           <Button variant="contained" color="primary" type="submit">
             Set Salary
           </Button></form><br></br><br></br>

@@ -166,14 +166,14 @@ function EditAnnouncement() {
           </Button>
           </form><br></br><br></br>
           <form onSubmit={onPut}>
-          <TextField id="standard-uncontrolled" label="Title" defaultValue="" value={Title} onChange={e => setTitle(e.target.value)} /><br></br><br></br>
+          <TextField id="standard-uncontrolled" label="Title" defaultValue="" value={Title} onChange={e => setTitle(e.target.value)} required /><br></br><br></br>
           <FormLabel component="legend">Department</FormLabel>
               <RadioGroup aria-label="Department" name="Department"  value={Department} onChange={e => setDepartment(e.target.value)}  >
                 <FormControlLabel value="IT" control={<Radio />} label="IT" />
                 <FormControlLabel value="Accounting" control={<Radio />} label="Accounting" />
                 <FormControlLabel value="Management" control={<Radio />} label="Management" />
               </RadioGroup><br></br><br></br>
-          <TextField id="outlined-multiline-flexible" label="Announcement" multiline Rows={4} variant="outlined" value={Description} style = {{width: 350}} defaultValue="" onChange={e => setDescription(e.target.value)}/><br></br><br></br>
+          <TextField id="outlined-multiline-flexible" label="Announcement" multiline Rows={4} variant="outlined" value={Description} style = {{width: 350}} defaultValue="" onChange={e => setDescription(e.target.value)} required/><br></br><br></br>
           <Button variant="contained" color="primary" type="submit">
             Update Announcement
           </Button></form><br></br><br></br>

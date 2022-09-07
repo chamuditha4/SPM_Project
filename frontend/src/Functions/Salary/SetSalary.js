@@ -111,6 +111,11 @@ function SetSalary() {
 
   }
 
+
+
+
+
+
   function autoselect(){
     Eids=[];
     repo.map((repos) => ( Eids.push(repos)));
@@ -145,10 +150,19 @@ function SetSalary() {
           /><br></br><br></br>
           <Button variant="contained" color="primary" type="submit">
           Select User
-          </Button></form><br></br>
+          </Button></form><br></br><br></br>
           <form onSubmit={onPut}>
-          <TextField id="standard-uncontrolled" label="Salary" defaultValue="" value={Salary} onChange={e => setSalary(e.target.value)}/><br></br><br></br>
-          <TextField id="standard-uncontrolled" label="Bonus" defaultValue="" value={Bonus} onChange={e => setBonus(e.target.value)}/><br></br><br></br>
+          <label for="salary">Enter your salary</label><br></br>
+<input type="text" id="salary" name="salary" pattern="[0-9]+" required size="40"
+           placeholder="Salary"  defaultValue=""  value={Salary} onChange={e => setSalary(e.target.value)}/><br></br><br></br>
+          
+          <br></br><br></br>
+          <label for="Bonus">Enter your bonus</label>
+<input type="text" id="Bonus" name="Bonus" pattern="[0-9]+" required size="40"
+           placeholder="Bonus"  defaultValue=""  value={Bonus} onChange={e => setBonus(e.target.value)} /><br></br><br></br>
+          
+         
+        <br></br><br></br>
           <Button variant="contained" color="primary" type="submit">
             Set Salary
           </Button></form><br></br><br></br>
