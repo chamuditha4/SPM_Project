@@ -186,7 +186,7 @@ function EditUser() {
           <form onSubmit={onPut}>
           <TextField id="standard-uncontrolled" label="Name"  value={Name} onChange={e => setName(e.target.value)} /><br></br><br></br>
           <TextField id="standard-uncontrolled" label="Email"  value={Email} onChange={e => setEmail(e.target.value)} /><br></br><br></br>
-          <TextField id="standard-uncontrolled" label="Password"  value={Password} onChange={e => setPassword(e.target.value)} />
+          <TextField id="standard-uncontrolled" label="Password"  value={Password} onChange={e => setPassword(e.target.value)} required/>
           <h6>Please Leave a blank, if you are not changing password!.</h6>
           <Button variant="contained" color="primary"  type="submit">
           Edit User
