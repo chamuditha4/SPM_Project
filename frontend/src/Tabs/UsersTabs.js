@@ -72,9 +72,9 @@ export default function UsersTabs() {
         aria-label="Vertical tabs example"
         className={classes.tabs}
       >
-        <Tab label="Edit User" {...a11yProps(0)} />
-        <Tab label="Remove User" {...a11yProps(1)} />
-        <Tab label="Add Role" {...a11yProps(2)} />
+        <Tab label="EDIT USER" {...a11yProps(0)} />
+        <Tab label="REMOVE USER" {...a11yProps(1)} />
+        <Tab label="CHANGE ROLE" {...a11yProps(2)} />
       </Tabs>
       <TabPanel value={value} index={0}>
         <EditUser/>
