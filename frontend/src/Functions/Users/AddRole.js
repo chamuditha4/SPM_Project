@@ -125,12 +125,14 @@ function AddRole() {
       handleClick3();
     }else{
       try{
+        if(window.confirm("Are you sure you want to update")== true){
         const task = { roll: Role, department:Department };
         axios.put('http://localhost:4000/users/update-user/'+Id._id, task)
         .then(response => {
           console.log(response);
           handleClick();
         });
+      }else{}
       }catch(err){
         handleClick1();
       }
