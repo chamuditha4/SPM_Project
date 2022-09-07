@@ -120,7 +120,10 @@ function EditUser() {
       if(Id.length === 0){
         handleClick1();
       }
+      
+
       if (Password === ''){
+        
         const task = { name: Name,email: Email };
         axios.put('http://localhost:4000/users/update-user/'+Id._id, task)
         .then(response => {
@@ -128,16 +131,20 @@ function EditUser() {
           handleClick();
         });
       }else{
+        if(window.confirm("Are you sure you want to update")== true){
         const task = { name: Name,email: Email, password:(CryptoJS.AES.encrypt((Password),key)).toString() };
         axios.put('http://localhost:4000/users/update-user/'+Id._id, task)
         .then(response => {
           console.log(response);
           handleClick();
         });
+      }else{}
       }
+  
     }catch(err){
       handleClick3();
     }
+    
     
     
 
@@ -186,7 +193,7 @@ function EditUser() {
           <form onSubmit={onPut}>
           <TextField id="standard-uncontrolled" label="Name"  value={Name} onChange={e => setName(e.target.value)} /><br></br><br></br>
           <TextField id="standard-uncontrolled" label="Email"  value={Email} onChange={e => setEmail(e.target.value)} /><br></br><br></br>
-          <TextField id="standard-uncontrolled" label="Password"  value={Password} onChange={e => setPassword(e.target.value)} required/>
+          <TextField id="standard-uncontrolled" label="Password"  value={Password} onChange={e => setPassword(e.target.value)}pattern="(?=.\d)(?=.[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required />
           <h6>Please Leave a blank, if you are not changing password!.</h6>
           <Button variant="contained" color="primary"  type="submit">
           Edit User
