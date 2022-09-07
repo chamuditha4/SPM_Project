@@ -169,6 +169,9 @@ function EditAsset() {
                         onChange={e => setDescription((e.target.value))}
                     />
                     <br></br><br></br>
+
+                    <TextField disabled={disable} id="standard-uncontrolled" label="Value" defaultValue="" value={Value} onChange={e => setValue(e.target.value)} /><br></br><br></br>
+                    
                     <FormControl sx={{ minWidth: 200 }}>
                         <InputLabel id="demo-simple-select-label">Status</InputLabel>
                         <Select
@@ -186,7 +189,7 @@ function EditAsset() {
                         </Select>
                     </FormControl>
                     <br></br><br></br>
-                    <TextField disabled={disable} id="standard-uncontrolled" label="Value" defaultValue="" value={Value} onChange={e => setValue(e.target.value)} /><br></br><br></br>
+                    
                     <Button disabled={disable} variant="contained" color="primary"  type="submit">
                         Update Asset
                     </Button></form><br></br><br></br>
