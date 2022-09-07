@@ -49,7 +49,7 @@ function RemoveAsset() {
     function onSubmit(event) {
         event.preventDefault();
 
-        if(window.confirm("Are you sure want to delete?")==true){
+        if(window.confirm("Are you sure want to delete?")===true){
 
             try{
                 axios.delete(`http://localhost:4000/asset/delete-asset/${Selection}`)

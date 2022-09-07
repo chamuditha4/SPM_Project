@@ -6,14 +6,15 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-import Attendance from './Functions/Attendance/Attendance';
-import Leave from './Functions/Attendance/Leave';
 import SalaryTab from './Tabs/SalaryTab';
+import AttendanceTab from './Tabs/AttendanceTabs';
+import Announcement from './Utils/Announcement';
 import JobTabs from './Tabs/JobTabs';
 import { getUser } from './Utils/Common';
 import Logout from './Logout';
 import Profile from './Utils/Profile';
 import logo from "./images/Blue logo-cropped.png";
+
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -87,9 +88,9 @@ export default function EmpDashBoard() {
                         <Tab label="PROFILE" {...a11yProps(0)} />
                         <Tab label="WORK" {...a11yProps(1)} />
                         <Tab label="SALARY" {...a11yProps(2)} />
-                        <Tab label="LEAVE" {...a11yProps(3)} />
+                        <Tab label="ATTENDANCE" {...a11yProps(3)} />
                         <Tab label="ASSETS" {...a11yProps(4)} />
-                        <Tab label="ATTENDANCE" {...a11yProps(5)} />
+                        <Tab label="ANNOUNCEMENT" {...a11yProps(5)} />
                         <Tab label="LOGOUT" {...a11yProps(6)} />
 
                     </Tabs>
@@ -104,12 +105,12 @@ export default function EmpDashBoard() {
                     <SalaryTab/>
                 </TabPanel>
                 <TabPanel value={value} index={3}>
-                    <Leave/>
+                    <AttendanceTab/>
                 </TabPanel>
                 <TabPanel value={value} index={4}>
                 </TabPanel>
                 <TabPanel value={value} index={5}>
-                    <Attendance/>
+                    <Announcement/>
                 </TabPanel>
                 <TabPanel value={value} index={6}>
                     <Logout/>
