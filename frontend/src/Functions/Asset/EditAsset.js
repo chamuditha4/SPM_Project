@@ -73,6 +73,10 @@ function EditAsset() {
         }else{
 
             try{
+
+                if(window.confirm("Are you sure want to update?")==true){
+
+
                 const taskOBJ = {
                     name: Name,
                     description: Description,
@@ -86,7 +90,11 @@ function EditAsset() {
                 setValue('');
                 setStatus('');
                 handleClick();
-                window.location.reload();
+                //window.location.reload();
+
+            }else{
+
+            }
             }
             catch(err){
                 handleClick2();
@@ -169,6 +177,9 @@ function EditAsset() {
                         onChange={e => setDescription((e.target.value))}
                     />
                     <br></br><br></br>
+
+                    <TextField disabled={disable} id="standard-uncontrolled" label="Value" defaultValue="" value={Value} onChange={e => setValue(e.target.value)} /><br></br><br></br>
+
                     <FormControl sx={{ minWidth: 200 }}>
                         <InputLabel id="demo-simple-select-label">Status</InputLabel>
                         <Select
@@ -186,7 +197,7 @@ function EditAsset() {
                         </Select>
                     </FormControl>
                     <br></br><br></br>
-                    <TextField disabled={disable} id="standard-uncontrolled" label="Value" defaultValue="" value={Value} onChange={e => setValue(e.target.value)} /><br></br><br></br>
+                    
                     <Button disabled={disable} variant="contained" color="primary"  type="submit">
                         Update Asset
                     </Button></form><br></br><br></br>

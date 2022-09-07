@@ -8,12 +8,12 @@ import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import UsersTabs from './Tabs/UsersTabs';
 import MngerAttendanceTabs from './Tabs/MngerAttendanceTabs';
-import SubmissionTabs from './Tabs/SubmissionTabs';
 import TasksTabs from './Tabs/TasksTabs';
 import AnnouncementTabs from './Tabs/AnnouncementTabs';
 import MngerSalaryTabs from './Tabs/MngerSalaryTabs';
 import logo from "./images/Blue logo-cropped.png";
 import { getUser } from './Utils/Common';
+import AssetTab from './Tabs/AssetTabs';
 import Logout from './Logout';
 
 function TabPanel(props) {
@@ -91,13 +91,13 @@ export default function MngrDashBoard() {
                         text-align="center"
                         aria-label="scrollable auto tabs example"
                     >
-                        <Tab label="Users" {...a11yProps(0)} />
-                        <Tab label="Tasks" {...a11yProps(1)} />
-                        <Tab label="Submission" {...a11yProps(2)} />
-                        <Tab label="Announcement" {...a11yProps(3)} />
-                        <Tab label="Attendance" {...a11yProps(4)} />
-                        <Tab label="Salary" {...a11yProps(5)} />
-                        <Tab label="Logout" {...a11yProps(6)} />
+                        <Tab label="USERS" {...a11yProps(0)} />
+                        <Tab label="WORK" {...a11yProps(1)} />
+                        <Tab label="ANNOUNCEMENT" {...a11yProps(2)} />
+                        <Tab label="ATTENDANCE" {...a11yProps(3)} />
+                        <Tab label="ASSETS" {...a11yProps(4)} />
+                        <Tab label="SALARY" {...a11yProps(5)} />
+                        <Tab label="LOGOUT" {...a11yProps(6)} />
                     </Tabs>
                 </AppBar>
                 <TabPanel value={value} index={0}>
@@ -107,18 +107,18 @@ export default function MngrDashBoard() {
                     <TasksTabs/>
                 </TabPanel>
                 <TabPanel value={value} index={2}>
-                    <SubmissionTabs/>
-                </TabPanel>
-                <TabPanel value={value} index={3}>
                     <AnnouncementTabs/>
                 </TabPanel>
-                <TabPanel value={value} index={4}>
+                <TabPanel value={value} index={3}>
                     <MngerAttendanceTabs/>
+                </TabPanel>
+                <TabPanel value={value} index={4}>
+                    <AssetTab/>
                 </TabPanel>
                 <TabPanel value={value} index={5}>
                     <MngerSalaryTabs/>
                 </TabPanel>
-                <TabPanel value={value} index={6} >
+                <TabPanel value={value} index={6}>
                     <Logout/>
                 </TabPanel>
 

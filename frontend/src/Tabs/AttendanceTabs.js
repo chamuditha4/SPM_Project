@@ -5,8 +5,8 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-import ViewSubmission from '../Functions/Submission/ViewSubmission';
-import RateSubmission from '../Functions/Submission/RateSubmission';
+import Attendance from '../Functions/Attendance/Attendance';
+import Leave from '../Functions/Attendance/Leave';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -53,7 +53,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SubmissionTabs() {
+export default function AnnouncementTabs() {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
@@ -71,14 +71,14 @@ export default function SubmissionTabs() {
         aria-label="Vertical tabs example"
         className={classes.tabs}
       >
-        <Tab label="View Submission" {...a11yProps(0)} />
-        <Tab label="Rate Submission" {...a11yProps(1)} />
+        <Tab label="MARK ATTENDANCE" {...a11yProps(0)} />
+        <Tab label="MARK LEAVE" {...a11yProps(1)} />
       </Tabs>
       <TabPanel value={value} index={0}>
-        <ViewSubmission/>
+        <Attendance/>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <RateSubmission/>
+        <Leave/>
       </TabPanel>
     </div>
   );
