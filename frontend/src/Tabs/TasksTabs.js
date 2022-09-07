@@ -8,6 +8,8 @@ import Box from '@material-ui/core/Box';
 import NewTasks from '../Functions/Submission/Tasks/NewTasks';
 import EditTasks from '../Functions/Submission/Tasks/EditTasks';
 import RemoveTasks from '../Functions/Submission/Tasks/RemoveTasks';
+import ViewSubmission from '../Functions/Submission/ViewSubmission';
+import RateSubmission from '../Functions/Submission/RateSubmission';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -72,9 +74,12 @@ export default function TasksTabs() {
         aria-label="Vertical tabs example"
         className={classes.tabs}
       >
-        <Tab label="New Tasks" {...a11yProps(0)} />
-        <Tab label="Edit Tasks" {...a11yProps(1)} />
-        <Tab label="Remove Tasks" {...a11yProps(2)} />
+        <Tab label="NEW TASK" {...a11yProps(0)} />
+        <Tab label="EDIT TASK" {...a11yProps(1)} />
+        <Tab label="REMOVE TASK" {...a11yProps(2)} />
+          <Tab label="SUBMISSION" {...a11yProps(3)} />
+          <Tab label="RATE TASK" {...a11yProps(4)} />
+          <Tab label="PROGRESS REPORT" {...a11yProps(5)} />
       </Tabs>
       <TabPanel value={value} index={0}>
         <NewTasks/>
@@ -85,6 +90,15 @@ export default function TasksTabs() {
       <TabPanel value={value} index={2}>
         <RemoveTasks/>
       </TabPanel>
+        <TabPanel value={value} index={3}>
+            <ViewSubmission/>
+        </TabPanel>
+        <TabPanel value={value} index={4}>
+            <RateSubmission/>
+        </TabPanel>
+        <TabPanel value={value} index={5}>
+            <ViewSubmission/>
+        </TabPanel>
     </div>
   );
 }
