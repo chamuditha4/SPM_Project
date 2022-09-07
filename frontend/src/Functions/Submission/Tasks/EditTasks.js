@@ -110,7 +110,7 @@ function EditTasks() {
       handleClick1();
     }else{
       try{
-        if(window.confirm("Are you sure want to update?")==true){
+        if(window.confirm("Are you sure want to update?")===true){
           console.log(Title);
           const task = { name: Title,description: Description };
           axios.put('http://localhost:4000/tasks/update-task/'+Id._id, task)

@@ -123,7 +123,7 @@ function EditAnnouncement() {
     }else{
       try{
 
-        if(window.confirm("Are you sure want to update?")==true){
+        if(window.confirm("Are you sure want to update?")===true){
 
 
         console.log(Title);
