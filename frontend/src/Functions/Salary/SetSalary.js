@@ -8,6 +8,7 @@ import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 import Stack from '@mui/material/Stack';
 
+
 var Eids = [{"name":"No Person","_id":"404"}];
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -97,12 +98,16 @@ function SetSalary() {
       handleClick1();
     }else{
       try{
+        if(window.confirm("Are you sure want to update?")==true){
         const task = { salary: Salary,bonus:Bonus };
       axios.put('http://localhost:4000/salary/update-salary/'+Eidss._id, task)
           .then(response => {
             console.log(response);
             handleClick();
           });
+      }else{
+
+      }
       }catch(err){
         handleClick2();
       }
@@ -127,8 +132,8 @@ function SetSalary() {
     return (
       <div>
         {autoselect()}
-        <div className="prof3">
-        <div className="prof4">
+        
+        <div className="prof">
           <h2>Set Salary</h2>
           <form onSubmit={onSubmit}>
           <Autocomplete
@@ -193,7 +198,7 @@ function SetSalary() {
         </Stack>
 
       </div>
-      </div>
+      
     )
   }
   
