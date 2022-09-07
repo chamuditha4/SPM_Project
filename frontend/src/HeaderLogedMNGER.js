@@ -14,6 +14,7 @@ import AnnouncementTabs from './Tabs/AnnouncementTabs';
 import MngerSalaryTabs from './Tabs/MngerSalaryTabs';
 import logo from "./images/Blue logo-cropped.png";
 import { getUser } from './Utils/Common';
+import AssetTab from './Tabs/AssetTabs';
 import Logout from './Logout';
 
 function TabPanel(props) {
@@ -96,8 +97,9 @@ export default function MngrDashBoard() {
                         <Tab label="Submission" {...a11yProps(2)} />
                         <Tab label="Announcement" {...a11yProps(3)} />
                         <Tab label="Attendance" {...a11yProps(4)} />
-                        <Tab label="Salary" {...a11yProps(5)} />
-                        <Tab label="Logout" {...a11yProps(6)} />
+                        <Tab label="Asset" {...a11yProps(5)} />
+                        <Tab label="Salary" {...a11yProps(6)} />
+                        <Tab label="Logout" {...a11yProps(7)} />
                     </Tabs>
                 </AppBar>
                 <TabPanel value={value} index={0}>
@@ -116,9 +118,12 @@ export default function MngrDashBoard() {
                     <MngerAttendanceTabs/>
                 </TabPanel>
                 <TabPanel value={value} index={5}>
+                    <AssetTab/>
+                </TabPanel>
+                <TabPanel value={value} index={6}>
                     <MngerSalaryTabs/>
                 </TabPanel>
-                <TabPanel value={value} index={6} >
+                <TabPanel value={value} index={7} >
                     <Logout/>
                 </TabPanel>
 

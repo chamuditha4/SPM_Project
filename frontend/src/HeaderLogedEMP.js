@@ -7,7 +7,6 @@ import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import Progress from './Tabs/Progress';
-import AssetTab from './Tabs/AssetTabs';
 import Attendance from './Functions/Attendance/Attendance';
 import Leave from './Functions/Attendance/Leave';
 import SalaryTab from './Tabs/SalaryTab';
@@ -108,7 +107,6 @@ export default function EmpDashBoard() {
                     <Leave/>
                 </TabPanel>
                 <TabPanel value={value} index={4}>
-                    <AssetTab/>
                 </TabPanel>
                 <TabPanel value={value} index={5}>
                     <Attendance/>
