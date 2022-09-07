@@ -108,8 +108,12 @@ function EditUser() {
             setEmail(myRepo.email);
             setPassword('');
           });
-      }catch(err){}
-          handleClick2();
+      }catch(e){
+        handleClick2();
+        
+      }
+      
+          
       }
     }
     
@@ -130,6 +134,7 @@ function EditUser() {
           console.log(response);
           handleClick();
         });
+<<<<<<< Updated upstream
       }
       if(Password.length<7){
         alert("Password should be at least 8 characters!")
@@ -137,16 +142,25 @@ function EditUser() {
       }
       else{
         if(window.confirm("Are you sure you want to update")== true){
+=======
+      }if(Password.length<7){
+
+        alert("Password should be at least 8 characters!")
+        return
+
+      }else{
+>>>>>>> Stashed changes
         const task = { name: Name,email: Email, password:(CryptoJS.AES.encrypt((Password),key)).toString() };
         axios.put('http://localhost:4000/users/update-user/'+Id._id, task)
         .then(response => {
-          console.log(response);
+          
           handleClick();
         });
       }else{}
       }
   
     }catch(err){
+
       handleClick3();
     }
     

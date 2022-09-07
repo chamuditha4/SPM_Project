@@ -72,6 +72,14 @@ export default class Signup extends Component{
     e.preventDefault()
 
     if (this.state.password === this.state.repassword){
+
+
+      if(this.state.password.length<7){
+
+        alert("Password should be at least 8 characters!")
+        return
+      }
+
       const UserOBJ = {
         name: this.state.name,
         username: this.state.username,

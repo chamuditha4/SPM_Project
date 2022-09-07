@@ -98,7 +98,7 @@ function RemoveAsset() {
     return (
         <div>
             <div className="prof">
-                <h2>REMOVE ASSET</h2>
+                <h2>Remove Assets</h2>
 
                 <form onSubmit={onSubmit}>
                     <FormControl sx={{ minWidth: 200 }}>

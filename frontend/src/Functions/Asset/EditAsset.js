@@ -144,7 +144,7 @@ function EditAsset() {
     return (
         <div>
             <div className="prof">
-                <h2>EDIT ASSET</h2>
+                <h2>Edit Assets</h2>
 
                 <form onSubmit={onSubmit}>
                     <FormControl sx={{ minWidth: 200 }}>

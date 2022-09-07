@@ -113,7 +113,7 @@ function AddAsset() {
     return (
         <div>
             <div className="prof">
-                <h2>ADD ASSET</h2>
+                <h2>Add Assets</h2>
                 <form onSubmit={onSubmit}>
                     <TextField id="standard-uncontrolled" label="Name" defaultValue="" value={Name} onChange={e => setName(e.target.value)} /><br></br><br></br>
 
@@ -122,13 +122,13 @@ function AddAsset() {
                         label="Description"
                         defaultValue=""
                         multiline Rows={4}
-                        style = {{width: "65%", lineHeight: 2}}
+                        style = {{width: "65%"}}
                         value={Description}
                         onChange={e => setDescription((e.target.value))}
                     />
                     <br></br><br></br>
 
-                    <TextField id="standard-uncontrolled" label="Value" defaultValue="" value={Value} onChange={e => setValue(e.target.value)} /><br></br><br></br>
+                    <TextField type="number" style = {{width: "65%"}} id="standard-uncontrolled" label="Value" defaultValue="" value={Value} onChange={e => setValue(e.target.value)} /><br></br><br></br>
 
                     <FormControl sx={{ minWidth: 200 }}>
                         <InputLabel id="demo-simple-select-label">Asset Type</InputLabel>
@@ -156,6 +156,8 @@ function AddAsset() {
                             value={status}
                             label="Select Job"
                             onChange={e => setStatus(e.target.value)}
+
+                            required
                         >
                             <MenuItem value="Def" disabled selected="true">Select Status</MenuItem>
                             { Defstatus.map((repos) => (

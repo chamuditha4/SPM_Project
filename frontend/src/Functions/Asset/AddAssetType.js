@@ -82,7 +82,7 @@ function AddAssetType() {
     return (
         <div>
             <div className="prof">
-                <h2>ADD ASSET TYPE</h2>
+                <h2>Add Asset Types</h2>
                 <form onSubmit={onSubmit}>
                     <TextField id="standard-uncontrolled" label="Name" defaultValue="" value={Name} onChange={e => setName(e.target.value)} /><br></br><br></br>
 
