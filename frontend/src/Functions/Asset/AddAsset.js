@@ -10,12 +10,14 @@ import InputLabel from "@mui/material/InputLabel";
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
+import { getUser } from './../../Utils/Common';
 
 const Alert = React.forwardRef(function Alert(props, ref) {
     return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
 
 function AddAsset() {
+    const user = getUser();
     const [open, setOpen] = React.useState(false);
     const [Name, setName] = useState('');
     const [Type, setType] = useState('');
@@ -75,6 +77,7 @@ function AddAsset() {
             try{
                 const taskOBJ = {
                     name: Name,
+                    uid:user._id,
                     description: Description,
                     type:Type,
                     status: status,

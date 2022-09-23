@@ -117,14 +117,12 @@ a{
 
 #logo{
     width:30%;
-    display:block;  
-    margin: 0 auto;
-    margin-bottom: 3%;
-    margin-top: 3%;
-/*    margin-left: 40%;
-    margin-right: 40%;
-    padding-left: 2%;
-    padding-right: 2%; */
+    display:block;
+    margin: 3% auto;
+    /*    margin-left: 40%;
+        margin-right: 40%;
+        padding-left: 2%;
+        padding-right: 2%; */
     
 }
 
@@ -340,24 +338,15 @@ width: 200%;
 
 .jsd_1{
 display: inline-block;
-margin-top: 100px;
-margin-bottom: 100px;
-margin-right: 10%;
-margin-left: 15%;
+    margin: 100px 10% 100px 15%;
 }
 .jsd_2{
 display: inline-block;
-margin-top: 100px;
-margin-bottom: 100px;
-margin-right: 10%;
-margin-left: 10%;
+    margin: 100px 10%;
 }
 .jsd_3{
 display: inline-block;
-margin-top: 100px;
-margin-bottom: 100px;
-margin-right: 10%;
-margin-left: 10%;
+    margin: 100px 10%;
 }
 
 .jsd_frm{
@@ -374,10 +363,7 @@ text-align: center;
 background-color: rgba(255, 255, 255, 0.959); 
 color: black; 
 border: 2px solid #f44336;
-margin-top: 5px;
-margin-bottom: 5px;
-margin-left: 5px;
-margin-right: 5px;
+    margin: 5px;
 }
 
 .jsd_btn:hover{
@@ -395,10 +381,7 @@ color: white;
 }
 
 .prof{
-    margin-top: 1%;
-    margin-left: 40%;
-    margin-right: 30%;
-    margin-bottom: 2%;
+    margin: 1% 30% 2% 40%;
     padding-left: 50px;
     padding-right: 50px;
     display: inline-block;

@@ -5,7 +5,13 @@ let AssetSchema = new Schema({
   name: {
     type: String
   },
+  employee: {
+    type: Array
+  },
   description: {
+    type: String
+  },
+  uid: {
     type: String
   },
   type: {

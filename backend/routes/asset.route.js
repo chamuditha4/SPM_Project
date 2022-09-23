@@ -17,6 +17,43 @@ router.route('/').get((req, res) => {
   })
 })
 
+// get Asset by uid
+router.route('/searchbyId/:uid').get((req, res) => {
+  const userId = (req.params.uid);
+  AssetSchema .find({uid:userId}, (error, data) => {
+    if (error) {
+      return next(error)
+    } else {
+      res.json(data)
+    }
+  })
+})
+
+// get Asset by Name
+router.route('/searchbyName/:uid/:q').get((req, res) => {
+  const query = (req.params.q);
+  const userId = (req.params.uid);
+  AssetSchema .find({uid:userId, "name": { $regex: '.*' + query + '.*' } }, (error, data) => {
+    if (error) {
+      return next(error)
+    } else {
+      res.json(data)
+    }
+  })
+})
+
+// get Asset by Employee
+router.route('/searchbyEmp/:emp').get((req, res) => {
+  const userId = (req.params.emp);
+  AssetSchema .find({ employee : { $all : [userId] },}, (error, data) => {
+    if (error) {
+      return next(error)
+    } else {
+      res.json(data)
+    }
+  })
+})
+
 // READ Asset Type
 router.route('/gettypes').get((req, res) => {
   AssetTypeSchema.find((error, data) => {
@@ -56,7 +93,7 @@ router.route('/create-asset-type').post((req, res, next) => {
 router.route('/update-asset/:id').put((req, res, next) => {
   AssetSchema.findByIdAndUpdate(req.params.id, {
     $set: req.body
-  }, (error, data) => {
+  }, {upsert: true},(error, data) => {
     if (error) {
       console.log(error)
       return next(error);

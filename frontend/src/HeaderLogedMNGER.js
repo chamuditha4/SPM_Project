@@ -13,7 +13,7 @@ import AnnouncementTabs from './Tabs/AnnouncementTabs';
 import MngerSalaryTabs from './Tabs/MngerSalaryTabs';
 import logo from "./images/Blue logo-cropped.png";
 import { getUser } from './Utils/Common';
-import AssetTab from './Tabs/AssetTabs';
+import AssetTab from './Tabs/ManagerAssetTabs';
 import Logout from './Logout';
 
 function TabPanel(props) {

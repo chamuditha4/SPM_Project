@@ -8,6 +8,7 @@ import Box from '@material-ui/core/Box';
 import NewAnnouncement from '../Functions/Announcement/NewAnnouncement';
 import EditAnnouncement from '../Functions/Announcement/EditAnnouncement';
 import RemoveAnnouncement from '../Functions/Announcement/RemoveAnnouncement';
+import ViewAnnouncement from '../Utils/Announcement';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -72,17 +73,21 @@ export default function AnnouncementTabs() {
         aria-label="Vertical tabs example"
         className={classes.tabs}
       >
-        <Tab label="New Announcement" {...a11yProps(0)} />
-        <Tab label="Edit Announcement" {...a11yProps(1)} />
-        <Tab label="Remove Announcement" {...a11yProps(2)} />
+        <Tab label="View Announcement" {...a11yProps(0)} />
+          <Tab label="New Announcement" {...a11yProps(1)} />
+        <Tab label="Edit Announcement" {...a11yProps(2)} />
+        <Tab label="Remove Announcement" {...a11yProps(3)} />
       </Tabs>
       <TabPanel value={value} index={0}>
-        <NewAnnouncement/>
+        <ViewAnnouncement/>
       </TabPanel>
-      <TabPanel value={value} index={1}>
+        <TabPanel value={value} index={1}>
+            <NewAnnouncement/>
+        </TabPanel>
+      <TabPanel value={value} index={2}>
         <EditAnnouncement/>
       </TabPanel>
-      <TabPanel value={value} index={2}>
+      <TabPanel value={value} index={3}>
         <RemoveAnnouncement/>
       </TabPanel>
     </div>

@@ -10,6 +10,7 @@ import SalaryTab from './Tabs/SalaryTab';
 import AttendanceTab from './Tabs/AttendanceTabs';
 import Announcement from './Utils/Announcement';
 import JobTabs from './Tabs/JobTabs';
+import AssetTabs from './Tabs/EmpAssetTabs';
 import { getUser } from './Utils/Common';
 import Logout from './Logout';
 import Profile from './Utils/Profile';
@@ -108,6 +109,7 @@ export default function EmpDashBoard() {
                     <AttendanceTab/>
                 </TabPanel>
                 <TabPanel value={value} index={4}>
+                    <AssetTabs/>
                 </TabPanel>
                 <TabPanel value={value} index={5}>
                     <Announcement/>
