@@ -8,8 +8,9 @@ import Box from '@material-ui/core/Box';
 import NewTasks from '../Functions/Submission/Tasks/NewTasks';
 import EditTasks from '../Functions/Submission/Tasks/EditTasks';
 import RemoveTasks from '../Functions/Submission/Tasks/RemoveTasks';
-import ViewSubmission from '../Functions/Submission/ViewSubmission';
+import ProgressReport from '../Functions/Submission/ProgressReport';
 import RateSubmission from '../Functions/Submission/RateSubmission';
+import Submission from '../Functions/Submission/Submission';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -49,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     backgroundColor:  'background.paper',
     display: 'flex',
-    height: 224,
+    height: 400,
   },
   tabs: {
     borderRight: `1px solid ${'divider'}`,
@@ -91,13 +92,13 @@ export default function TasksTabs() {
         <RemoveTasks/>
       </TabPanel>
         <TabPanel value={value} index={3}>
-            <ViewSubmission/>
+            <Submission/>
         </TabPanel>
         <TabPanel value={value} index={4}>
             <RateSubmission/>
         </TabPanel>
         <TabPanel value={value} index={5}>
-            <ViewSubmission/>
+            <ProgressReport/>
         </TabPanel>
     </div>
   );

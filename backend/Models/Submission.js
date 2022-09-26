@@ -16,6 +16,8 @@ let SubmissionSchema = new Schema({
   },
   log: {
     type: String
+  },final: {
+    type: Boolean
   }
 }, {
     collection: 'submission'
