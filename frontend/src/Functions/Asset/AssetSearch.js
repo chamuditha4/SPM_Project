@@ -36,11 +36,6 @@ function AssetSearch() {
     const [open1, setOpen1] = React.useState(false);
     const [open2, setOpen2] = React.useState(false);
 
-
-    const handleClick1 = () => {
-        setOpen1(true);
-    };
-
     const handleClose1 = (event, reason) => {
         if (reason === 'clickaway') {
             return;
@@ -59,10 +54,6 @@ function AssetSearch() {
         }
 
         setOpen2(false);
-    };
-
-    const handleClick = () => {
-        setOpen(true);
     };
 
     const handleClose = (event, reason) => {
