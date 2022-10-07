@@ -18,7 +18,7 @@ const Alert = React.forwardRef(function Alert(props, ref) {
 let Types = {};
 let Users = {};
 
-const columns: GridColDef[] = [
+const columns  = [
     { field: 'id', headerName: 'ID', width: 70 },
     { field: 'name', headerName: 'Name', width: 90 },
     { field: 'description', headerName: 'Description', width: 90 },
