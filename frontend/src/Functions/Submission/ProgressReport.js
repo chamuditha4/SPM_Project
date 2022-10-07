@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
     padding: 60
   },
 });
-const columns: GridColDef[] = [
+const columns  = [
   { field: 'id', headerName: 'ID', width: 170 },
   { field: 'time', headerName: 'Time', width: 190 },
   { field: 'employee', headerName: 'Employee', width: 90 },

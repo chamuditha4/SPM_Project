@@ -1,0 +1,6 @@
+projectKey=SPM
+serverUrl=http://localhost:9000
+serverVersion=9.6.1.59531
+dashboardUrl=http://localhost:9000/dashboard?id=SPM
+ceTaskId=AYOxb96sQIpHP2a1_KkB
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AYOxb96sQIpHP2a1_KkB
