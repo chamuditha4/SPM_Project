@@ -1,19 +1,48 @@
 {
-  "name": "frontend",
+  "name": "ems",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@emotion/react": "^11.10.0",
-    "@emotion/styled": "^11.10.0",
-    "@mui/material": "^5.9.3",
-    "@testing-library/jest-dom": "^5.16.4",
-    "@testing-library/react": "^13.3.0",
-    "@testing-library/user-event": "^13.5.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.3.0",
-    "react-scripts": "^5.0.1",
-    "web-vitals": "^2.1.4"
+    "@auth0/auth0-react": "^1.6.0",
+    "@emotion/react": "^11.4.1",
+    "@emotion/styled": "^11.3.0",
+    "@material-ui/core": "^5.0.0-beta.5",
+    "@material-ui/lab": "^5.0.0-alpha.44",
+    "@mui/icons-material": "^5.10.6",
+    "@mui/material": "^5.0.0",
+    "@mui/styled-engine-sc": "^5.0.0",
+    "@mui/styles": "^5.0.0",
+    "@mui/x-data-grid": "^5.17.3",
+    "@react-pdf/renderer": "^3.0.0",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^11.2.7",
+    "@testing-library/user-event": "^12.8.3",
+    "@types/react-html-parser": "^2.0.2",
+    "and": "^0.0.3",
+    "axios": "^0.21.1",
+    "body-parser": "^1.19.0",
+    "bootstrap": "^5.1.0",
+    "cors": "^2.8.5",
+    "crypto-js": "^4.1.1",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "install": "^0.13.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^4.1.0",
+    "mongoose": "^6.5.1",
+    "npm": "^8.16.0",
+    "react": "^17.0.2",
+    "react-bootstrap": "^1.6.1",
+    "react-chat-bubble": "^0.8.7",
+    "react-cookie": "^4.1.1",
+    "react-dom": "^17.0.2",
+    "react-html-parser": "^2.0.2",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "^2.1.3",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^2.0.3",
+    "styled-components": "^5.3.1",
+    "web-vitals": "^1.1.2"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -22,6 +51,12 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
+    "plugins": [
+      "react-hooks"
+    ],
+    "rules": {
+      "react-hooks/exhaustive-deps": 0
+    },
     "extends": [
       "react-app",
       "react-app/jest"
@@ -38,5 +73,19 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "eslint-plugin-react-hooks": "^4.2.0"
+  },
+  "description": "[How To Use Axios with React](https://www.digitalocean.com/community/tutorials/react-axios-react)",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chamuditha4/SPM_Project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chamuditha4/SPM_Project/issues"
   }
 }
