@@ -167,7 +167,7 @@ function AssignAsset() {
             <Stack spacing={2} sx={{ width: '100%' }}>
                 <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
                     <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
-                        Asset Type Added successfuly!
+                        Assigned successfuly!
                     </Alert>
                 </Snackbar>
             </Stack>
