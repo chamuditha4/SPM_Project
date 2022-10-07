@@ -93,9 +93,6 @@ function AssetReport() {
     const [open2, setOpen2] = React.useState(false);
 
 
-    const handleClick1 = () => {
-        setOpen1(true);
-    };
 
     const handleClose1 = (event, reason) => {
         if (reason === 'clickaway') {
@@ -105,9 +102,6 @@ function AssetReport() {
         setOpen1(false);
     };
 
-    const handleClick2 = () => {
-        setOpen2(true);
-    };
 
     const handleClose2 = (event, reason) => {
         if (reason === 'clickaway') {
@@ -115,10 +109,6 @@ function AssetReport() {
         }
 
         setOpen2(false);
-    };
-
-    const handleClick = () => {
-        setOpen(true);
     };
 
     const handleClose = (event, reason) => {

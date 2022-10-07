@@ -90,7 +90,6 @@ function AssignAsset() {
             );
         await axios.get(`http://localhost:4000/asset/searchbyId/${user._id}`)
             .then(response => {
-                // console.log(JSON.stringify(response.data));
                 const data = response.data;
                 for (let k in data){
                     const row ={
@@ -107,7 +106,6 @@ function AssignAsset() {
         });
         await axios.get('http://localhost:4000/users')
             .then(response => {
-                // console.log(JSON.stringify(response.data));
                 const myRepo = response.data;
                 setEmployee(myRepo);
             });
