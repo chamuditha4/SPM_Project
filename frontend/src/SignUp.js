@@ -74,7 +74,7 @@ export default class Signup extends Component{
     if (this.state.password === this.state.repassword){
 
 
-      if(this.state.password.length<7){
+      if(this.state.password.length<8){
 
         alert("Password should be at least 8 characters!")
         return

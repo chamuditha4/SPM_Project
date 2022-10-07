@@ -125,13 +125,13 @@ function AddAsset() {
                         label="Description"
                         defaultValue=""
                         multiline Rows={4}
-                        style = {{width: "65%"}}
+                        style = {{width: "73%"}}
                         value={Description}
                         onChange={e => setDescription((e.target.value))}
                     />
                     <br></br><br></br>
 
-                    <TextField type="number" style = {{width: "65%"}} id="standard-uncontrolled" label="Value" defaultValue="" value={Value} onChange={e => setValue(e.target.value)} /><br></br><br></br>
+                    <TextField type="number" style = {{width: "73%"}} id="standard-uncontrolled" label="Value" defaultValue="" value={Value} onChange={e => setValue(e.target.value)} /><br></br><br></br>
 
                     <FormControl sx={{ minWidth: 200 }}>
                         <InputLabel id="demo-simple-select-label">Asset Type</InputLabel>
