@@ -7,6 +7,7 @@ import TextField from '@material-ui/core/TextField';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 import Stack from '@mui/material/Stack'
+import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 
 var Eids = [{"name":"No Person","_id":"404"}];
 const Alert = React.forwardRef(function Alert(props, ref) {
@@ -127,7 +128,7 @@ function RemoveUser() {
               />
             )}
           /><br></br>
-          <Button variant="contained" color="primary" type="submit">
+          <Button variant="contained" color="primary" type="submit" startIcon={<RemoveCircleOutlineIcon/>}>
           Remove User
           </Button>
           </form><br></br><br></br>

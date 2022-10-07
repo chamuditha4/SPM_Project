@@ -11,6 +11,8 @@ import TextField from '@material-ui/core/TextField';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 import Stack from '@mui/material/Stack';
+import AddIcon from '@mui/icons-material/Add';
+import DoneIcon from '@mui/icons-material/Done';
 
 var Eids = [{"name":"No Person","_id":"404"}];
 const Alert = React.forwardRef(function Alert(props, ref) {
@@ -168,7 +170,7 @@ function AddRole() {
               />
             )}
           /><br></br>
-          <Button variant="contained" color="primary" type="submit">
+          <Button variant="contained" color="primary" type="submit" startIcon={<AddIcon/>}>
           Select User
           </Button></form><br></br><br></br>
           <form onSubmit={onPut}>
@@ -184,7 +186,7 @@ function AddRole() {
                 <FormControlLabel value="Accounting" control={<Radio />} label="Accounting" />
                 <FormControlLabel value="Management" control={<Radio />} label="Management" />
               </RadioGroup><br></br>
-          <Button variant="contained" color="primary" type="submit">
+          <Button variant="contained" color="primary" type="submit" startIcon={<DoneIcon/>}>
           Set Role
           </Button></form><br></br><br></br>
         </div>

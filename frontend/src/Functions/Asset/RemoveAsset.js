@@ -9,6 +9,7 @@ import InputLabel from "@mui/material/InputLabel";
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
+import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 
 const Alert = React.forwardRef(function Alert(props, ref) {
     return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -117,7 +118,7 @@ function RemoveAsset() {
                     </FormControl>
                     <br></br><br></br>
 
-                   <Button disabled={disable} variant="contained" color="primary"  type="submit">
+                   <Button disabled={disable} variant="contained" color="primary"  type="submit" startIcon={<RemoveCircleOutlineIcon/>}>
                         Remove Asset
                     </Button></form><br></br><br></br>
             </div>

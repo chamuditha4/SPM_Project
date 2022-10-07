@@ -98,7 +98,7 @@ function Leave() {
         <div className="prof">
           <h2>Mark Leave</h2>
           <form onSubmit={onSubmit}>
-          <Button variant="contained" color="secondary"   type="submit"  disabled={isDisable}>
+          <Button variant="contained" color="primary"   type="submit"  disabled={isDisable}>
             Mark Leave
           </Button></form><br></br><br></br>
           <Button variant="contained" disabled>

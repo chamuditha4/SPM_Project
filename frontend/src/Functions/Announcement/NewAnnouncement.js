@@ -11,6 +11,7 @@ import FormLabel from '@material-ui/core/FormLabel';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 import Stack from '@mui/material/Stack';
+import AddIcon from '@mui/icons-material/Add';
 
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -102,7 +103,7 @@ function NewAnnouncement() {
                 <FormControlLabel value="Management" control={<Radio />} label="Management" />
               </RadioGroup><br></br><br></br>
           <TextField id="outlined-multiline-flexible" label="Announcement" multiline Rows={10} variant="outlined" value={Description} style = {{width: 350}}  onChange={e => setDescription(e.target.value)} required/><br></br><br></br>
-          <Button variant="contained" color="primary"  type="submit">
+          <Button variant="contained" color="primary"  type="submit" startIcon={<AddIcon/>}>
             Add Announcement
           </Button></form><br></br><br></br>
         </div>

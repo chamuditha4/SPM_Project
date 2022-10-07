@@ -8,6 +8,7 @@ import MuiAlert from '@mui/material/Alert';
 import Stack from '@mui/material/Stack';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import TextField from '@material-ui/core/TextField';
+import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 
 var Taskids = [{"name":"No task","_id":"404"}];
 
@@ -113,7 +114,7 @@ function RemoveTasks() {
               />
             )}
           /><br></br>
-          <Button variant="contained" color="primary" type="submit">
+          <Button variant="contained" color="primary" type="submit" startIcon={<RemoveCircleOutlineIcon/>}>
           Remove Task
           </Button>
           </form><br></br><br></br>

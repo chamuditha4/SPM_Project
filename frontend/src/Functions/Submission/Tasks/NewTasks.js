@@ -8,6 +8,8 @@ import { getUser } from './../../../Utils/Common';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 import Stack from '@mui/material/Stack';
+import AddIcon from '@mui/icons-material/Add';
+//startIcon={<AddIcon/>}
 
 var Eids = [{"name":"No Person","_id":"404"}];
 const Alert = React.forwardRef(function Alert(props, ref) {
@@ -120,7 +122,7 @@ function NewTasks() {
           />
           </div><br></br>
           <TextField id="outlined-multiline-flexible" label="Job Description" multiline Rows={4} variant="outlined" style = {{width: 350}} defaultValue="" value={Description} onChange={e => setDescription(e.target.value)}/><br></br><br></br>
-          <Button variant="contained" color="secondary"  type="submit">
+          <Button variant="contained" color="primary"  type="submit" startIcon={<AddIcon/>}>
           Add Task 
           </Button>
           </form><br></br><br></br>

@@ -15,7 +15,7 @@ import Select from '@mui/material/Select';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 import Stack from '@mui/material/Stack';
-
+import EditIcon from '@mui/icons-material/Edit';
 
 
 const Alert = React.forwardRef(function Alert(props, ref) {
@@ -184,7 +184,7 @@ function EditAnnouncement() {
                 <FormControlLabel value="Management" control={<Radio />} label="Management" />
               </RadioGroup><br></br><br></br>
           <TextField id="outlined-multiline-flexible" label="Announcement" multiline Rows={4} variant="outlined" value={Description} style = {{width: 350}} defaultValue="" onChange={e => setDescription(e.target.value)} required/><br></br><br></br>
-          <Button variant="contained" color="primary" type="submit">
+          <Button variant="contained" color="primary" type="submit" startIcon={<EditIcon/>}>
             Update Announcement
           </Button></form><br></br><br></br>
         </div>

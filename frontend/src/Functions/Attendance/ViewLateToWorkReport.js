@@ -242,7 +242,7 @@ function ViewAttendanceReport() {
                                     />
                                 )}
                             /><br></br>
-                            <Button variant="contained" color="secondary"  type="submit">Search</Button><br></br><br></br><br></br>
+                            <Button variant="contained" color="primary"  type="submit">Search</Button><br></br><br></br><br></br>
                         </form>
                     </div>
                     <div style={{ height: 400, width: 400, margin:"auto", background:'#EEEEEE'}}>

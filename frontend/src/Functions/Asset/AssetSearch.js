@@ -174,7 +174,7 @@ function AssetSearch() {
                                 }}
                                 variant="standard"
                             />
-                            <Button variant="contained" color="primary" type="submit">
+                            <Button variant="contained" color="primary" type="submit" endIcon={<SearchIcon/>}>
                                 Search Asset
                             </Button>
                         </form>

@@ -7,6 +7,9 @@ import Autocomplete from '@material-ui/lab/Autocomplete';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 import Stack from '@mui/material/Stack';
+import AddIcon from '@mui/icons-material/Add';
+import EditIcon from '@mui/icons-material/Edit';
+//startIcon={<EditIcon/>}
 
 const CryptoJS = require("crypto-js");
 var key = "ASECRET";
@@ -198,7 +201,7 @@ function EditUser() {
               />
             )}
           /><br></br>
-          <Button variant="contained" color="primary" type="submit">
+          <Button variant="contained" color="primary" type="submit" startIcon={<AddIcon/>}>
           Select User
           </Button>
           </form><br></br>
@@ -207,7 +210,7 @@ function EditUser() {
           <TextField id="standard-uncontrolled" label="Email"  value={Email} onChange={e => setEmail(e.target.value)} /><br></br><br></br>
           <TextField id="standard-uncontrolled" label="Password" type={"password"} value={Password} onChange={e => setPassword(e.target.value)}pattern="(?=.\d)(?=.[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required />
           <h6>Please Leave a blank, if you are not changing password!.</h6>
-          <Button variant="contained" color="primary"  type="submit">
+          <Button variant="contained" color="primary"  type="submit" startIcon={<EditIcon/>}>
           Edit User
           </Button>
           </form><br></br><br></br>

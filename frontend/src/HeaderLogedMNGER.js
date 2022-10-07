@@ -19,7 +19,12 @@ import Logout from './Logout';
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
     const user = getUser();
-    if(user.roll === "Manager"){
+
+
+    if(user==null){
+        window.location.href = "/Login";
+    }
+    else if(user.roll === "Manager"){
     }else{
         window.location.href = "/EmpDashBoard";
     }

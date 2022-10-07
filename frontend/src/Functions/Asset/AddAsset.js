@@ -11,6 +11,7 @@ import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import { getUser } from './../../Utils/Common';
+import AddIcon from '@mui/icons-material/Add';
 
 const Alert = React.forwardRef(function Alert(props, ref) {
     return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -170,7 +171,7 @@ function AddAsset() {
                     </FormControl>
                     <br></br><br></br>
                     
-                   <Button variant="contained" color="primary"  type="submit">
+                   <Button variant="contained" color="primary"  type="submit" startIcon={<AddIcon/>}>
                         Add Asset
                     </Button></form><br></br><br></br>
             </div>

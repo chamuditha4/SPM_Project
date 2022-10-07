@@ -10,6 +10,7 @@ import Stack from '@mui/material/Stack';
 import { DataGrid, GridColDef } from '@mui/x-data-grid';
 import {PDFDownloadLink, Page, Text, Svg, Line, Image, View, Document, StyleSheet, Font} from '@react-pdf/renderer';
 import logo from '../../images/Blue logo-cropped.png';
+import SearchIcon from '@mui/icons-material/Search';
 
 let Users = {};
 // PDF report style
@@ -228,7 +229,8 @@ const Alert = React.forwardRef(function Alert(props, ref) {
                               />
                             )}
                           />
-                          <Button variant="contained" color="secondary"  type="submit">Search</Button>
+                          <br></br>
+                          <Button variant="contained" color="primary"  type="submit" startIcon={<SearchIcon/>}>Search</Button>
                       </form>
                   </Stack>
               </div>

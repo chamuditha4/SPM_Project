@@ -8,6 +8,8 @@ import MuiAlert from '@mui/material/Alert';
 import Stack from '@mui/material/Stack';
 import Autocomplete from '@mui/material/Autocomplete';
 import { getUser } from './../../Utils/Common';
+import PersonAddAlt1Icon from '@mui/icons-material/PersonAddAlt1';
+
 
 const Alert = React.forwardRef(function Alert(props, ref) {
     return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -162,7 +164,7 @@ function AssignAsset() {
                                 />
                             )}
                         /><br></br>
-                        <Button variant="contained" color="primary" type="submit">
+                        <Button variant="contained" color="primary" type="submit" startIcon={<PersonAddAlt1Icon/>}>
                             Assign Asset
                         </Button>
                     </form>

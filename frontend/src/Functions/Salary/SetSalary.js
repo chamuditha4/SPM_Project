@@ -7,6 +7,7 @@ import Autocomplete from '@mui/material/Autocomplete';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 import Stack from '@mui/material/Stack';
+import DoneIcon from '@mui/icons-material/Done';
 
 
 var Eids = [{"name":"No Person","_id":"404"}];
@@ -169,7 +170,7 @@ function SetSalary() {
           
          
         <br></br><br></br>
-          <Button variant="contained" color="primary" type="submit">
+          <Button variant="contained" color="primary" type="submit" startIcon={<DoneIcon/>}>
             Set Salary
           </Button></form><br></br><br></br>
         </div>

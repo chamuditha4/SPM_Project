@@ -20,7 +20,11 @@ import logo from "./images/Blue logo-cropped.png";
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
     const user = getUser();
-    if(user.roll === "Manager"){
+
+    if(user==null){
+        window.location.href = "/Login";
+    }
+    else if(user.roll === "Manager"){
         window.location.href = "/MngDashBoard";
     }else{
     }

@@ -12,6 +12,7 @@ import Select from '@mui/material/Select';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 import Stack from '@mui/material/Stack';
+import StarIcon from '@mui/icons-material/Star';
 
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -117,7 +118,7 @@ function RateSubmission() {
           <Rating name="size-large" defaultValue={''} size="large" onChange={e => setRate(e.target.value)}  disabled={isDisable} value={Rate}/>
           <br></br><br></br>
           <TextField id="outlined-multiline-flexible" label="FeedBack" multiline Rows={4} variant="outlined" style = {{width: 350}} defaultValue="" onChange={e => setFeedback(e.target.value)}  disabled={isDisable} value={Feedback} /><br></br><br></br>
-          <Button variant="contained" color="secondary" type="submit" disabled={isDisable}>
+          <Button variant="contained" color="secondary" type="submit" disabled={isDisable} startIcon={<StarIcon/>}>
           Rate Task
           </Button></form><br></br><br></br>
         </div>

@@ -6,6 +6,8 @@ import axios from 'axios';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 import Stack from '@mui/material/Stack';
+import AddIcon from '@mui/icons-material/Add';
+
 
 const Alert = React.forwardRef(function Alert(props, ref) {
     return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -96,7 +98,7 @@ function AddAssetType() {
                         onChange={e => setDescription((e.target.value))}
                     />
                     <br></br><br></br>
-                    <Button variant="contained" color="primary"  type="submit">
+                    <Button variant="contained" color="primary"  type="submit" startIcon={<AddIcon/>}>
                         Add Asset Type
                     </Button></form><br></br><br></br>
             </div>

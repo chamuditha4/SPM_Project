@@ -8,6 +8,8 @@ import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 import Stack from '@mui/material/Stack';
 import Autocomplete from '@material-ui/lab/Autocomplete';
+import EditIcon from '@mui/icons-material/Edit';
+//startIcon={<EditIcon/>}
 
 var Taskids = [{"name":"No task","_id":"404"}];
 const Alert = React.forwardRef(function Alert(props, ref) {
@@ -161,7 +163,7 @@ function EditTasks() {
           <TextField id="standard-uncontrolled" label="" value={Title} onChange={e => setTitle(e.target.value)}/><br></br><br></br>
           <br></br>
           <TextField id="outlined-multiline-flexible" label="" multiline Rows={4} variant="outlined" style = {{width: 350}} defaultValue={Description} onChange={e => setDescription(e.target.value)}/><br></br><br></br>
-          <Button variant="contained" color="secondary" type="submit">
+          <Button variant="contained" color="primary" type="submit" startIcon={<EditIcon/>}>
           Edit Task
           </Button>
           </form><br></br><br></br>

@@ -111,7 +111,7 @@ function MyAsset() {
         <div>
             <div style={{ height: 700, width: 700, margin: '1% 3% 2% 4%', background:'#cecece6b'}}>
                 <Stack spacing={2} sx={{ m: 4,mx: "auto" }}>
-                <h2>SEARCH ASSET</h2>
+                <h2>MY ASSETS</h2>
 
                 <div style={{ height: 400, width: 550, margin:"auto", background:'#EEEEEE'}}>
                     <DataGrid
