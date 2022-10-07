@@ -9,13 +9,12 @@ import MuiAlert from '@mui/material/Alert';
 import Stack from '@mui/material/Stack'
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 
-var Eids = [{"name":"No Person","_id":"404"}];
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
 
 function RemoveUser() {
-  const [repo,setRepo] = useState([]);
+  const [Eids,setEids] = useState([]);
   const [Id, setId] = useState('');
   const [open, setOpen] = React.useState(false);
   const [open1, setOpen1] = React.useState(false);
@@ -26,7 +25,7 @@ function RemoveUser() {
       .then(response => {
        // console.log(JSON.stringify(response.data));
         const myRepo = response.data;
-        setRepo(myRepo);
+        setEids(myRepo);
       });
   };
 
@@ -87,7 +86,6 @@ function RemoveUser() {
 
         
         getRepo();
-        autoselect();
         handleClick();
       }catch(err){
         handleClick2();
@@ -97,16 +95,10 @@ function RemoveUser() {
     
   }
 
-  function autoselect(){
-    Eids=[];
-    repo.map((repos) => ( Eids.push(repos)));
-    //console.log(Eids);
-  }
 
   useEffect(() => getRepo(),[]);
     return (
       <div>
-        {autoselect()}
         <div className="prof">
           <h2>Remove User</h2>
           <form onSubmit={onRemove}>

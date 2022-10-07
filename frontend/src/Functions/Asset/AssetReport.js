@@ -1,16 +1,13 @@
 import React, {useEffect, useState} from 'react';
-import Button from '@material-ui/core/Button';
-import TextField from '@material-ui/core/TextField';
 import  './../../styles/App.css';
 import axios from 'axios';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 import Stack from '@mui/material/Stack';
-import { DataGrid, GridColDef } from '@mui/x-data-grid';
+import { DataGrid } from '@mui/x-data-grid';
 import { getUser } from './../../Utils/Common';
-import {PDFDownloadLink, Page, Text, Svg, Line, Image, View, Document, StyleSheet, Font} from '@react-pdf/renderer';
+import {PDFDownloadLink, Page, Text, Svg, Line, Image, View, Document, StyleSheet} from '@react-pdf/renderer';
 import logo from '../../images/Blue logo-cropped.png';
-import DownloadIcon from '@mui/icons-material/Download';
 
 const Alert = React.forwardRef(function Alert(props, ref) {
     return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -91,9 +88,7 @@ const styles = StyleSheet.create({
 function AssetReport() {
     const user = getUser();
     const [open, setOpen] = React.useState(false);
-    const [Name, setName] = useState('');
     const [rows,setrows] = useState([]);
-    const [Description, setDescription] = useState('');
     const [open1, setOpen1] = React.useState(false);
     const [open2, setOpen2] = React.useState(false);
 

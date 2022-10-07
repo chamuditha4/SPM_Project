@@ -8,7 +8,6 @@ import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 import Stack from '@mui/material/Stack';
 
-var Eids = [{"name":"No Person","_id":"404"}];
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
@@ -19,6 +18,7 @@ function AddSalaryDetails() {
   const [open2, setOpen2] = React.useState(false);
   const [open, setOpen] = React.useState(false);
   const [Eidss,setEidss] = useState('');
+  const [Eids,setEids] = useState([]);
   const [Salary, setSalary] = useState('');
   const [Bonus, setBonus] = useState('');
 
@@ -27,16 +27,16 @@ function AddSalaryDetails() {
       .then(response => {
        // console.log(JSON.stringify(response.data));
         const myRepo = response.data;
-        setRepo(myRepo);
+        setEids(myRepo);
       });
   };
 
-  function onSubmit(event) {
+  async function onSubmit(event) {
     event.preventDefault();
     console.log(Eidss._id);
     if (Eidss._id !== undefined){
       try{
-        axios.get('http://localhost:4000/salary/get-salary/' +Eidss._id)
+        await axios.get('http://localhost:4000/salary/get-salary/' +Eidss._id)
         .then(response => {
         // console.log(JSON.stringify(response.data));
         console.log(response);
@@ -91,14 +91,14 @@ function AddSalaryDetails() {
       setOpen2(false);
     };
 
-  function onPut(event) {
+  async function onPut(event) {
     event.preventDefault();
     if (Salary=== null || Bonus === null || Eidss === ''){
       handleClick1();
     }else{
       try{
         const task = { salary: Salary,bonus:Bonus };
-      axios.put('http://localhost:4000/salary/update-salary/'+Eidss._id, task)
+      await axios.put('http://localhost:4000/salary/update-salary/'+Eidss._id, task)
           .then(response => {
             console.log(response);
             handleClick();
@@ -111,17 +111,10 @@ function AddSalaryDetails() {
 
   }
 
-  function autoselect(){
-    Eids=[];
-    repo.map((repos) => ( Eids.push(repos)));
-    //console.log(Eids);
-  }
-
   useEffect(() => getRepo(),[]);
 
     return (
       <div>
-        {autoselect()}
         <div className="prof">
           <h2>Set Salary</h2>
           <form onSubmit={onSubmit}>

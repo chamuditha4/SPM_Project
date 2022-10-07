@@ -14,14 +14,13 @@ import Stack from '@mui/material/Stack';
 import AddIcon from '@mui/icons-material/Add';
 import DoneIcon from '@mui/icons-material/Done';
 
-var Eids = [{"name":"No Person","_id":"404"}];
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
 
 
 function AddRole() {
-  const [repo,setRepo] = useState([]);
+  const [Eids,setEids] = useState([]);
   const [Id, setId] = useState(null);
   const [Role, setRole] = useState('');
   const [Department, setDepartment] = useState('');
@@ -35,18 +34,9 @@ function AddRole() {
       .then(response => {
        // console.log(JSON.stringify(response.data));
         const myRepo = response.data;
-        setRepo(myRepo);
+        setEids(myRepo);
       });
   };
-
-  function autoselect(){
-    Eids=[];
-    repo.map((repos) => ( Eids.push(repos)));
-    //console.log(Eids);
-  }
-
-
-
 
   const handleClick = () => {
     setOpen(true);
@@ -148,7 +138,6 @@ function AddRole() {
   useEffect(() => getRepo(),[]);
     return (
       <div>
-        {autoselect()}
         <div className="prof">
           <h2>Change User Role</h2>
           <form onSubmit={onSubmit}>

@@ -2,7 +2,7 @@ const jwt = require('jsonwebtoken');
 const util = require('./util');
 require('dotenv').config();
 const CryptoJS = require("crypto-js");
-var key = "ASECRET";
+const key = "ASECRET";
 
 const userData = {
   email: "123456",
@@ -29,8 +29,8 @@ router.route('/create-user').post((req, res, next) => {
 
 
 router.route('/login-user').post((req, res, next) => {
-  var username = req.body.username;
-  var password = req.body.password;
+  let username = req.body.username;
+  let password = req.body.password;
   const user = userSchema .findOne({username: username },(error, data) => {
     console.log(user)
     if (data){
@@ -87,7 +87,7 @@ router.route('/employees').get((req, res) => {
 
 // Get Single Student
 router.route('/verifyToken').get((req, res) => {
-    var token = req.body.token || req.query.token;
+    let token = req.body.token || req.query.token;
     if (!token) {
       return res.status(400).json({
         error: true,
@@ -102,7 +102,7 @@ router.route('/verifyToken').get((req, res) => {
       });
 
       // get basic user details
-      var userObj = util.getCleanUser(user);
+      let userObj = util.getCleanUser(user);
       return res.json({ user: userObj, token });
     });
 })

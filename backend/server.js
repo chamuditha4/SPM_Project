@@ -35,7 +35,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true
 }));
-app.use(cors());
+
+let corsOptions = {
+  origin: 'localhost:3000'
+};
+
+app.use(cors(corsOptions));
 app.use('/users', userRoute)
 app.use('/tasks', taskRoute)
 app.use('/Announcement', AnnouncementRoute)

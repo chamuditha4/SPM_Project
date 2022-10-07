@@ -11,7 +11,6 @@ import Stack from '@mui/material/Stack';
 import AddIcon from '@mui/icons-material/Add';
 //startIcon={<AddIcon/>}
 
-var Eids = [{"name":"No Person","_id":"404"}];
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
@@ -20,7 +19,7 @@ function NewTasks() {
   const [open, setOpen] = React.useState(false);
   const [open1, setOpen1] = React.useState(false);
   const user = getUser();
-  const [repo,setRepo] = useState([]);
+  const [Eids,setEids] = useState([]);
   const [Title, setTitle] = useState('');
   const [Description, setDescription] = useState('');
   const [Eidss,setEidss] = useState([]);
@@ -30,7 +29,7 @@ function NewTasks() {
       .then(response => {
        // console.log(JSON.stringify(response.data));
         const myRepo = response.data;
-        setRepo(myRepo);
+        setEids(myRepo);
         console.log(user._id);
       });
   };
@@ -82,11 +81,6 @@ function NewTasks() {
     
   }
 
-  function autoselect(){
-    Eids=[];
-    repo.map((repos) => ( Eids.push(repos)));
-    console.log(Eids);
-  }
 
 
   useEffect(() => getRepo(),[]);
@@ -95,7 +89,6 @@ function NewTasks() {
     return (
       
       <div>
-        {autoselect()}
         <div className="prof">
           <h2>New Tasks</h2>
           <form onSubmit={onSubmit}>

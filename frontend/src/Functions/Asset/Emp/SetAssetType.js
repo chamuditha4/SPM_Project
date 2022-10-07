@@ -68,7 +68,7 @@ function SetAssetType() {
                 status:SelectedStatus.name
             }
             try{
-                axios.put(`http://localhost:4000/asset/update-asset/${SelectedAsset.id}`, updateObj)
+                await axios.put(`http://localhost:4000/asset/update-asset/${SelectedAsset.id}`, updateObj)
                     .then(response => {
                         console.log(response);
                         handleClick();

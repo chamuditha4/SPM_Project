@@ -35,7 +35,6 @@ function EditAnnouncementDetails() {
   const getRepo = () => {
     axios.get('http://localhost:4000/Announcement/' + user._id)
       .then(response => {
-       // console.log(JSON.stringify(response.data));
         const myRepo = response.data;
         setRepo(myRepo);
       });
@@ -52,7 +51,6 @@ function EditAnnouncementDetails() {
       
       axios.get('http://localhost:4000/Announcement/get-announcement/' +Id)
         .then(response => {
-        // console.log(JSON.stringify(response.data));
         console.log(response);
           const myRepo = response.data;
           setDescription(myRepo.description);

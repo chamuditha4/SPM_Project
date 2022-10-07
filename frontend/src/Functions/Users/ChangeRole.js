@@ -13,14 +13,13 @@ import MuiAlert from '@mui/material/Alert';
 import Stack from '@mui/material/Stack';
 import AddIcon from '@mui/icons-material/Add';
 
-var Eids = [{"name":"No Person","_id":"404"}];
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
 
 
 function ChangeRole() {
-  const [repo,setRepo] = useState([]);
+  const [Eids,setEids] = useState([]);
   const [Id, setId] = useState(null);
   const [Role, setRole] = useState('');
   const [Department, setDepartment] = useState('');
@@ -34,15 +33,9 @@ function ChangeRole() {
       .then(response => {
        // console.log(JSON.stringify(response.data));
         const myRepo = response.data;
-        setRepo(myRepo);
+        setEids(myRepo);
       });
   };
-
-  function autoselect(){
-    Eids=[];
-    repo.map((repos) => ( Eids.push(repos)));
-    //console.log(Eids);
-  }
 
 
 
@@ -115,7 +108,7 @@ function ChangeRole() {
       
   }
 
-  function onPut(event) {
+  async function onPut(event) {
     event.preventDefault();
     if (Id===null){
       handleClick2();
@@ -127,7 +120,7 @@ function ChangeRole() {
     }else{
       try{
         const task = { roll: Role, department:Department };
-        axios.put('http://localhost:4000/users/update-user/'+Id._id, task)
+        await axios.put('http://localhost:4000/users/update-user/'+Id._id, task)
         .then(response => {
           console.log(response);
           handleClick();
@@ -145,7 +138,6 @@ function ChangeRole() {
   useEffect(() => getRepo(),[]);
     return (
       <div>
-        {autoselect()}
         <div className="prof">
           <h2>Change User Role</h2>
           <form onSubmit={onSubmit}>

@@ -11,7 +11,6 @@ import Autocomplete from '@material-ui/lab/Autocomplete';
 import EditIcon from '@mui/icons-material/Edit';
 //startIcon={<EditIcon/>}
 
-var Taskids = [{"name":"No task","_id":"404"}];
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
@@ -19,7 +18,7 @@ const Alert = React.forwardRef(function Alert(props, ref) {
 function EditTasks() {
   const [open, setOpen] = React.useState(false);
   const user = getUser();
-  const [repo,setRepo] = useState([]);
+  const [Taskids,setTaskids] = useState([]);
   const [Id, setId] = useState('');
   const [Title, setTitle] = useState('');
   const [Description, setDescription] = useState('');
@@ -31,15 +30,11 @@ function EditTasks() {
       .then(response => {
        // console.log(JSON.stringify(response.data));
         const myRepo = response.data;
-        setRepo(myRepo);
+        setTaskids(myRepo);
       });
   };
 
-  function autoselect(){
-    Taskids=[];
-    repo.map((repos) => ( Taskids.push(repos)));
-    //console.log(Eids);
-  }
+
 
   const handleClick = () => {
     setOpen(true);
@@ -78,7 +73,7 @@ function EditTasks() {
   };
   
 
-  function onSubmit(event) {
+  async function onSubmit(event) {
     event.preventDefault();
     console.log(Id);
     if (Id === ''){
@@ -88,7 +83,7 @@ function EditTasks() {
       setTitle('');
       
       try{
-        axios.get('http://localhost:4000/tasks/get-task/' +Id._id)
+        await axios.get('http://localhost:4000/tasks/get-task/' +Id._id)
         .then(response => {
         // console.log(JSON.stringify(response.data));
         console.log(response);
@@ -133,7 +128,6 @@ function EditTasks() {
   useEffect(() => getRepo(),[]);
     return (
       <div>
-        {autoselect()}
         <div className="prof">
           <h2>Edit Tasks</h2>
           <form onSubmit={onSubmit}>

@@ -103,12 +103,11 @@ function AddAsset() {
         try{
             await axios.get('http://localhost:4000/asset/gettypes')
                 .then(response => {
-                    // console.log(JSON.stringify(response.data));
                     const myRepo = response.data;
                     setRepo(myRepo);
                 });
         }catch (e) {
-            await handleClick2();
+            handleClick2();
         }
 
     };

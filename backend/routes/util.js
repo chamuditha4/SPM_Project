@@ -1,4 +1,4 @@
-var jwt = require('jsonwebtoken');
+const jwt = require('jsonwebtoken');
 
 // generate token and return it
 function generateToken(user) {
@@ -6,7 +6,7 @@ function generateToken(user) {
     //2. Use the information that are useful in other parts
     if (!user) return null;
    
-    var u = {
+    let u = {
       _id: user.id,
       name: user.name,
       email: user.email,

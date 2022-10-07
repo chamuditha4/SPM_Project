@@ -10,8 +10,6 @@ import Autocomplete from '@material-ui/lab/Autocomplete';
 import TextField from '@material-ui/core/TextField';
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 
-var Taskids = [{"name":"No task","_id":"404"}];
-
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
@@ -20,7 +18,7 @@ function RemoveTasks() {
   const [open, setOpen] = React.useState(false);
   const [open1, setOpen1] = React.useState(false);
   const user = getUser();
-  const [repo,setRepo] = useState([]);
+  const [Taskids,setTaskids] = useState([]);
   const [Id, setId] = useState('');
 
   const getRepo = () => {
@@ -28,15 +26,10 @@ function RemoveTasks() {
       .then(response => {
        // console.log(JSON.stringify(response.data));
         const myRepo = response.data;
-        setRepo(myRepo);
+        setTaskids(myRepo);
       });
   };
 
-  function autoselect(){
-    Taskids=[];
-    repo.map((repos) => ( Taskids.push(repos)));
-    //console.log(Eids);
-  }
 
   const handleClick = () => {
     setOpen(true);
@@ -92,7 +85,6 @@ function RemoveTasks() {
   useEffect(() => getRepo(),[]);
     return (
       <div>
-        {autoselect()}
         <div className="prof">
           <h2>Remove Tasks</h2>
           <form onSubmit={onRemove}>

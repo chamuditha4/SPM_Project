@@ -12,14 +12,17 @@ const port = process.env.PORT || 4000;
 // static user details
 const userData = {
   userId: "789789",
-  password: "123456",
+  password: process.env.USER_PASSWORD,
   name: "Clue Mediator",
   username: "cluemediator",
   isAdmin: true
 };
 
-// enable CORS
-app.use(cors());
+let corsOptions = {
+  origin: 'localhost:3000'
+};
+
+app.use(cors(corsOptions));
 // parse application/json
 app.use(bodyParser.json());
 // parse application/x-www-form-urlencoded
@@ -30,7 +33,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //In all future routes, this helps to know if the request is authenticated or not.
 app.use(function (req, res, next) {
   // check header or url parameters or post parameters for token
-  var token = req.headers['authorization'];
+  let token = req.headers['authorization'];
   if (!token) return next(); //if no token, continue
 
   token = token.replace('Bearer ', '');
@@ -88,7 +91,7 @@ app.post('/users/signin', function (req, res) {
 // verify the token and return it if it's valid
 app.get('/verifyToken', function (req, res) {
   // check header or url parameters or post parameters for token
-  var token = req.body.token || req.query.token;
+  let token = req.body.token || req.query.token;
   if (!token) {
     return res.status(400).json({
       error: true,
@@ -110,7 +113,7 @@ app.get('/verifyToken', function (req, res) {
       });
     }
     // get basic user details
-    var userObj = utils.getCleanUser(userData);
+    let userObj = utils.getCleanUser(userData);
     return res.json({ user: userObj, token });
   });
 });

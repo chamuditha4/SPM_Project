@@ -27,7 +27,6 @@ function RemoveAnnouncement() {
   const getRepo = () => {
     axios.get('http://localhost:4000/Announcement/' + user._id)
       .then(response => {
-       // console.log(JSON.stringify(response.data));
         const myRepo = response.data;
         setRepo(myRepo);
       });

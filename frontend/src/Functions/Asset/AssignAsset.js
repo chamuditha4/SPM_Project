@@ -19,19 +19,12 @@ let Types = {};
 function AssignAsset() {
     const user = getUser();
     const [open, setOpen] = React.useState(false);
-    const [Name, setName] = useState('');
     const [Asset, setAsset] = useState([]);
     const [Employee, setEmployee] = useState([]);
     const [SelectedAsset, setSelectedAsset] = useState('');
     const [SelectedEmployee, setSelectedEmployee] = useState('');
-    const [Description, setDescription] = useState('');
     const [open1, setOpen1] = React.useState(false);
     const [open2, setOpen2] = React.useState(false);
-
-
-    const handleClick1 = () => {
-        setOpen1(true);
-    };
 
     const handleClose1 = (event, reason) => {
         if (reason === 'clickaway') {
@@ -65,14 +58,14 @@ function AssignAsset() {
         setOpen(false);
     };
 
-    function onSubmit(event) {
+    async function onSubmit(event) {
         event.preventDefault();
 
         try{
             const updateObj ={
                 employee:SelectedEmployee._id
             }
-            axios.put(`http://localhost:4000/asset/update-asset/${SelectedAsset.id}`, updateObj)
+            await axios.put(`http://localhost:4000/asset/update-asset/${SelectedAsset.id}`, updateObj)
                 .then(response => {
                     console.log(response);
                     handleClick();

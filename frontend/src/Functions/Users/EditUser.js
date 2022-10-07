@@ -17,10 +17,9 @@ const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
 
-var Eids = [{"name":"No Person","_id":"404"}];
 
 function EditUser() {
-  const [repo,setRepo] = useState([]);
+  const [Eids,setEids] = useState([]);
   const [Id, setId] = useState('');
   const [Name, setName] = useState('');
   const [Email, setEmail] = useState('');
@@ -35,7 +34,7 @@ function EditUser() {
       .then(response => {
        // console.log(JSON.stringify(response.data));
         const myRepo = response.data;
-        setRepo(myRepo);
+        setEids(myRepo);
       });
   };
 
@@ -87,12 +86,6 @@ function EditUser() {
 
     setOpen3(false);
   };
-
-  function autoselect(){
-    Eids=[];
-    repo.map((repos) => ( Eids.push(repos)));
-    //console.log(Eids);
-  }
 
   async function onSubmit(event) {
     event.preventDefault();
@@ -179,7 +172,6 @@ function EditUser() {
 
     return (
       <div>
-        {autoselect()}
         <div className="prof">
           <h2>Edit User</h2>
           <form onSubmit={onSubmit}>

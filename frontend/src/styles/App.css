@@ -71,7 +71,7 @@ nav li ul li:hover{
 body{
     background-color: #ffffff;
     padding: 40px;
-    font-family: Arial;
+    font-family: Arial, sans-serif;
     text-align: center;
 }
 
@@ -84,7 +84,6 @@ body{
     margin-bottom: 15%;
     padding-left: 5%;
     padding-right: 5%;
-    margin-bottom: 10%;
     padding-top: 5%;
     padding-bottom: 5%;
     border: 2px;
@@ -101,7 +100,6 @@ body{
     font-family: 'Ubuntu', sans-serif;
     font-size:15px;
     text-align:center;
-    width:140px;
     height:40px;
     color:#fcfaf8;
     background-color: #1eb10c;
@@ -158,7 +156,6 @@ footer{
     display:block;
     width:40px;
     height: 40px;
-    display : inline-block;
     margin-right: 2%;
 
 }
@@ -243,7 +240,6 @@ border : none;
 font-family: 'Ubuntu', sans-serif;
 font-size:15px;
 text-align:center;
-width:140px;
 height:40px;
 color:#fcfaf8;
 background-color: #1eb10c;
@@ -375,7 +371,6 @@ color: white;
   display:block;
   width:40px;
   height: 40px;
-  display : inline-block;
   margin-right: 2%;
 
 }
