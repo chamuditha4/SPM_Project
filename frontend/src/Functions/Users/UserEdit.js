@@ -504,4 +504,4 @@ class EditUser extends Component {
     );
   }
 }
-export default EditRoom;
+export default EditUser;
