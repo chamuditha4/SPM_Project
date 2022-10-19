@@ -75,6 +75,7 @@ function RemoveAnnouncement() {
     if (Id === null){
       handleClick2();
     }else{
+       if(window.confirm("Are you sure want to delete?")===true){
       try{
         console.log(Id);
         await axios.delete('http://localhost:4000/Announcement/delete-announcement/'+Id)
@@ -89,7 +90,7 @@ function RemoveAnnouncement() {
         console.log(err);
       }
       
-    }
+    }}
 
   }
 
