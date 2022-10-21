@@ -33,7 +33,7 @@ router.route('/searchbyId/:uid').get((req, res) => {
 router.route('/searchbyName/:uid/:q').get((req, res) => {
   const query = (req.params.q);
   const userId = (req.params.uid);
-  AssetSchema .find({uid:userId, "name": { $regex: '.*' + query + '.*' } }, (error, data) => {
+  AssetSchema .find({'name' : new RegExp(query, 'i'),uid:userId}, (error, data) => {
     if (error) {
       return next(error)
     } else {

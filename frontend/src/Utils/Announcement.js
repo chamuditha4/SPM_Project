@@ -71,10 +71,9 @@ const styles = StyleSheet.create({
 });
 
 const columns  = [
-  { field: 'id', headerName: 'ID', width: 170 },
+  { field: 'id', headerName: 'ID', width: 70 },
   { field: 'name', headerName: 'Title', width: 190 },
-  { field: 'department', headerName: 'Department', width: 90 },
-  { field: 'description', headerName: 'Announcement', width: 90 },
+  { field: 'description', headerName: 'Announcement', width: 290 },
 ];
 function Announcement() {
   const [repo,setRepo] = useState([]);
@@ -114,9 +113,8 @@ function Announcement() {
           const data = response.data;
           for (let k in data){
             const row ={
-              id:data[k]._id,
+              id:k,
               name:data[k].name,
-              department:data[k].department,
               description:data[k].description
             }
             console.log(row)
@@ -175,7 +173,7 @@ function Announcement() {
 
   useEffect(() => getRepo(),[]);
   return (
-      <div style={{ height: 690, width: 800, margin: '1% 2% 2% 2%', background:'#cecece6b'}}>
+      <div style={{ height: 690, width: 800, margin: '1% 2% 20% 20%', background:'#cecece6b'}}>
         <Stack spacing={2} sx={{ m: 4,mx: "auto" }}>
           <div>
             <h2>Announcement</h2>
