@@ -19,11 +19,11 @@ let Types = {};
 let Users = {};
 
 const columns  = [
-    { field: 'id', headerName: 'ID', width: 70 },
-    { field: 'name', headerName: 'Name', width: 90 },
-    { field: 'description', headerName: 'Description', width: 90 },
+    { field: 'id', headerName: 'ID', width: 30 },
+    { field: 'name', headerName: 'Name', width: 130 },
+    { field: 'description', headerName: 'Description', width: 190 },
     { field: 'type', headerName: 'Type', width: 90 },
-    { field: 'status', headerName: 'Status', width: 90 },
+    { field: 'status', headerName: 'Status', width: 135 },
     { field: 'value', headerName: 'Value', width: 90 },
     { field: 'user', headerName: 'Assigned User', width: 150 },
 ];
@@ -146,7 +146,7 @@ function AssetSearch() {
     useEffect(() => StartFunc(),[]);
     return (
         <div>
-            <div style={{ height: 700, width: 800, margin: '1% 3% 2% 4%', background:'#cecece6b'}}>
+            <div style={{ height: 700, width: 900, margin: '1% 3% 2% 4%', background:'#cecece6b'}}>
                 <Stack spacing={2} sx={{ m: 4,mx: "auto" }}>
                 <h2>SEARCH ASSET</h2>
                 <div style={{ margin:"auto", background:'#EEEEEE'}}>
@@ -171,7 +171,7 @@ function AssetSearch() {
                         </form>
                     </Stack>
                 </div>
-                <div style={{ height: 400, width: 650, margin:"auto", background:'#EEEEEE'}}>
+                <div style={{ height: 400, width: 800, margin:"auto", background:'#EEEEEE'}}>
                     <DataGrid
                         rows={rows}
                         columns={columns}

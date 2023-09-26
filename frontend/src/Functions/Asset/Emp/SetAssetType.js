@@ -63,25 +63,28 @@ function SetAssetType() {
 
     async function onSubmit(event) {
         event.preventDefault();
-        try{
-            const updateObj ={
-                status:SelectedStatus.name
-            }
+        if(window.confirm("Are you sure want to update?")===true){
             try{
-                await axios.put(`http://localhost:4000/asset/update-asset/${SelectedAsset.id}`, updateObj)
-                    .then(response => {
-                        console.log(response);
-                        handleClick();
-                    });
+                const updateObj ={
+                    status:SelectedStatus.name
+                }
+                try{
+                    await axios.put(`http://localhost:4000/asset/update-asset/${SelectedAsset.id}`, updateObj)
+                        .then(response => {
+                            console.log(response);
+                            handleClick();
+                        });
+                }catch (e) {
+                    console.log(e)
+                    handleClick2();
+                }
+    
             }catch (e) {
                 console.log(e)
                 handleClick2();
             }
-
-        }catch (e) {
-            console.log(e)
-            handleClick2();
         }
+
     }
 
     const getRepo = async() => {

@@ -18,11 +18,11 @@ let Users = {};
 
 const columns  = [
     { field: 'id', headerName: 'ID', width: 70 },
-    { field: 'name', headerName: 'Name', width: 90 },
-    { field: 'description', headerName: 'Description', width: 90 },
-    { field: 'type', headerName: 'Type', width: 90 },
+    { field: 'name', headerName: 'Name', width: 130 },
+    { field: 'description', headerName: 'Description', width: 150 },
+    { field: 'type', headerName: 'Type', width: 130 },
     { field: 'status', headerName: 'Status', width: 90 },
-    { field: 'value', headerName: 'Value', width: 90 },
+    { field: 'value', headerName: 'Value', width: 80 },
     { field: 'user', headerName: 'Assigned User', width: 150 },
 ];
 
@@ -223,10 +223,10 @@ function AssetReport() {
     useEffect(() => StartFunc(),[]);
     return (
         <div>
-            <div style={{ height: 550, width: 800, margin: '1% 2% 2% 2%', background:'#cecece6b'}}>
+            <div style={{ height: 550, width: 900, margin: '1% 2% 2% 2%', background:'#cecece6b'}}>
                 <Stack spacing={2} sx={{ m: 4,mx: "auto" }}>
                     <h2>ASSET REPORT</h2>
-                    <div style={{ height: 400, width: 650, margin:"auto", background:'#EEEEEE'}}>
+                    <div style={{ height: 400, width: 750, margin:"auto", background:'#EEEEEE'}}>
                         <DataGrid
                             rows={rows}
                             columns={columns}

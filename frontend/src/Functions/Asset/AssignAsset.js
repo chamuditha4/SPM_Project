@@ -60,20 +60,23 @@ function AssignAsset() {
 
     async function onSubmit(event) {
         event.preventDefault();
-
-        try{
-            const updateObj ={
-                employee:SelectedEmployee._id
+        if(window.confirm("Are you sure want to update?")===true){
+            try{
+                const updateObj ={
+                    employee:SelectedEmployee._id
+                }
+                await axios.put(`http://localhost:4000/asset/update-asset/${SelectedAsset.id}`, updateObj)
+                    .then(response => {
+                        console.log(response);
+                        handleClick();
+                    });
+            }catch (e) {
+                console.log(e)
+                handleClick2();
             }
-            await axios.put(`http://localhost:4000/asset/update-asset/${SelectedAsset.id}`, updateObj)
-                .then(response => {
-                    console.log(response);
-                    handleClick();
-                });
-        }catch (e) {
-            console.log(e)
-            handleClick2();
         }
+
+  
     }
     const getRepo = async() => {
         await axios.get('http://localhost:4000/asset/gettypes')
@@ -88,7 +91,7 @@ function AssignAsset() {
 
                 }
             );
-        await axios.get(`http://localhost:4000/asset/searchbyId/${user._id}`)
+        await axios.get(`http://localhost:4000/asset`)
             .then(response => {
                 const data = response.data;
                 for (let k in data){

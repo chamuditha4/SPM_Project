@@ -13,12 +13,12 @@ const Alert = React.forwardRef(function Alert(props, ref) {
 
 let Types = {};
 const columns  = [
-    { field: 'id', headerName: 'ID', width: 70 },
-    { field: 'name', headerName: 'Name', width: 90 },
-    { field: 'description', headerName: 'Description', width: 90 },
-    { field: 'type', headerName: 'Type', width: 90 },
-    { field: 'status', headerName: 'Status', width: 90 },
-    { field: 'value', headerName: 'Value', width: 90 },
+    { field: 'id', headerName: 'ID', width: 30 },
+    { field: 'name', headerName: 'Name', width: 150 },
+    { field: 'description', headerName: 'Description', width: 150 },
+    { field: 'type', headerName: 'Type', width: 120 },
+    { field: 'status', headerName: 'Status', width: 130 },
+    { field: 'value', headerName: 'Value', width: 130 },
 ];
 
 function MyAsset() {
@@ -109,11 +109,11 @@ function MyAsset() {
     useEffect(() => StartFunc(),[]);
     return (
         <div>
-            <div style={{ height: 700, width: 700, margin: '1% 3% 2% 4%', background:'#cecece6b'}}>
+            <div style={{ height: 700, width: 900, margin: '1% 3% 2% 4%', background:'#cecece6b'}}>
                 <Stack spacing={2} sx={{ m: 4,mx: "auto" }}>
                 <h2>MY ASSETS</h2>
 
-                <div style={{ height: 400, width: 550, margin:"auto", background:'#EEEEEE'}}>
+                <div style={{ height: 400, width: 750, margin:"auto", background:'#EEEEEE'}}>
                     <DataGrid
                         rows={rows}
                         columns={columns}

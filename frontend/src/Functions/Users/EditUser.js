@@ -200,7 +200,7 @@ function EditUser() {
           <form onSubmit={onPut}>
           <TextField id="standard-uncontrolled" label="Name"  value={Name} onChange={e => setName(e.target.value)} /><br></br><br></br>
           <TextField id="standard-uncontrolled" label="Email"  value={Email} onChange={e => setEmail(e.target.value)} /><br></br><br></br>
-          <TextField id="standard-uncontrolled" label="Password" type={"password"} value={Password} onChange={e => setPassword(e.target.value)}pattern="(?=.\d)(?=.[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required />
+          <TextField id="standard-uncontrolled" label="Password" type={"password"} value={Password} onChange={e => setPassword(e.target.value)}pattern="(?=.\d)(?=.[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" />
           <h6>Please Leave a blank, if you are not changing password!.</h6>
           <Button variant="contained" color="primary"  type="submit" startIcon={<EditIcon/>}>
           Edit User

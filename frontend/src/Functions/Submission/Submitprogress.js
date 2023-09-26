@@ -266,7 +266,7 @@ function Submitprogress() {
         </Stack>
 
         <Stack spacing={2} sx={{ width: '100%' }}>
-          <Snackbar open={open3} autoHideDuration={600} onClose={handleClose3}>
+          <Snackbar open={open3} autoHideDuration={6000} onClose={handleClose3}>
             <Alert onClose={handleClose3} severity="warning" sx={{ width: '100%' }}>
               This project is Finished!.
             </Alert>

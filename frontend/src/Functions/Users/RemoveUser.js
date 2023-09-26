@@ -69,30 +69,31 @@ function RemoveUser() {
   async function onRemove(event) {
     event.preventDefault();
     console.log(Id);
-    if ( Id === null){
-      handleClick1();
-    }else{
-      try{
-
-        await axios.delete('http://localhost:4000/salary/delete-salary/'+Id._id)
-        .then(response => {
-          console.log(response);
-        });
-
-        await axios.delete('http://localhost:4000/users/delete-user/'+Id._id)
-        .then(response => {
-          console.log(response);
-        });
-
+    if(window.confirm("Are you sure want to Remove?")===true){
+      if ( Id === null){
+        handleClick1();
+      }else{
+        try{
+  
+          await axios.delete('http://localhost:4000/salary/delete-salary/'+Id._id)
+          .then(response => {
+            console.log(response);
+          });
+  
+          await axios.delete('http://localhost:4000/users/delete-user/'+Id._id)
+          .then(response => {
+            console.log(response);
+          });
+  
+          
+          getRepo();
+          handleClick();
+        }catch(err){
+          handleClick2();
+        }
         
-        getRepo();
-        handleClick();
-      }catch(err){
-        handleClick2();
       }
-      
     }
-    
   }
 
 

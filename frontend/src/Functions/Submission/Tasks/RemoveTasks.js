@@ -62,7 +62,7 @@ function RemoveTasks() {
     if (Id._id === undefined || Id._id === '' || Id._id === null){
       handleClick1();
     }else{
-      if(window.confirm("Are you sure want to update?")===true){
+      if(window.confirm("Are you sure want to Remove?")===true){
         await axios.delete('http://localhost:4000/tasks/delete-task/'+Id._id)
         .then(response => {
           console.log(response);
