@@ -30,11 +30,12 @@ class App extends React.Component {
 
 const Main = () => (
   <Switch>
-    <Route exact path='/' component={App}></Route>
-    <Route exact path='/Login' component={Login}></Route>
-    <Route exact path='/Signup' component={Signup}></Route>
-    <Route exact path='/EmpDashBoard' component={EmpDashBoard}></Route>
-    <Route exact path='/MngDashBoard' component={MngrDashBoard}></Route>
+    <Route exact path="*" component={App}></Route>
+    <Route exact path="/" component={App}></Route>
+    <Route exact path="/Login" component={Login}></Route>
+    <Route exact path="/Signup" component={Signup}></Route>
+    <Route exact path="/EmpDashBoard" component={EmpDashBoard}></Route>
+    <Route exact path="/MngDashBoard" component={MngrDashBoard}></Route>
   </Switch>
 );
 
